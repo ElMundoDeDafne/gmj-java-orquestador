@@ -8,27 +8,30 @@ import mx.com.mundodafne.gmj.orq.dto.hojafrontal.infopaciente.GmjInformacionPaci
 
 public class GmjHojaFrontalDTO implements Serializable{
 	
-	private GmjInformacionPacienteDTO informacionPacienteDTO;
-	private GmjDomicilioPacienteDTO domicilioPacienteDTO;
-	private GmjDatosContactoPacienteDTO datosContactoPacienteDTO;
-	
-	public GmjInformacionPacienteDTO getInformacionPacienteDTO() {
-		return informacionPacienteDTO;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7592321088360662387L;
+	private GmjInformacionPacienteDTO informacionPx;
+	private GmjDomicilioPacienteDTO domicilioPaciente;
+	private GmjDatosContactoPacienteDTO datosContacto;
+	public GmjInformacionPacienteDTO getInformacionPx() {
+		return informacionPx;
 	}
-	public void setInformacionPacienteDTO(GmjInformacionPacienteDTO informacionPacienteDTO) {
-		this.informacionPacienteDTO = informacionPacienteDTO;
+	public void setInformacionPx(GmjInformacionPacienteDTO informacionPx) {
+		this.informacionPx = informacionPx;
 	}
-	public GmjDomicilioPacienteDTO getDomicilioPacienteDTO() {
-		return domicilioPacienteDTO;
+	public GmjDomicilioPacienteDTO getDomicilioPaciente() {
+		return domicilioPaciente;
 	}
-	public void setDomicilioPacienteDTO(GmjDomicilioPacienteDTO domicilioPacienteDTO) {
-		this.domicilioPacienteDTO = domicilioPacienteDTO;
+	public void setDomicilioPaciente(GmjDomicilioPacienteDTO domicilioPaciente) {
+		this.domicilioPaciente = domicilioPaciente;
 	}
-	public GmjDatosContactoPacienteDTO getDatosContactoPacienteDTO() {
-		return datosContactoPacienteDTO;
+	public GmjDatosContactoPacienteDTO getDatosContacto() {
+		return datosContacto;
 	}
-	public void setDatosContactoPacienteDTO(GmjDatosContactoPacienteDTO datosContactoPacienteDTO) {
-		this.datosContactoPacienteDTO = datosContactoPacienteDTO;
+	public void setDatosContacto(GmjDatosContactoPacienteDTO datosContacto) {
+		this.datosContacto = datosContacto;
 	}
 	
 }

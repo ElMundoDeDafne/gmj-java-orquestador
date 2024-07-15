@@ -15,37 +15,40 @@ public class GmjHistorialClinicoDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -4951490349806731615L;
-	private List<GmjAntecedentesHdoFamiliaresDTO> antecedentesHdoFam;
-	private GmjAntecedentesGinecObsDTO antecedentesGinecObstetricos;
-	private GmjAntecPersNoPatologicosDTO antecedentesPersNoPatologicos;
-	private List<GmjInmunizacionesPacienteDTO> inmunizacionesPaciente;
-	
-	
-	
-	public GmjAntecPersNoPatologicosDTO getAntecedentesPersNoPatologicos() {
-		return antecedentesPersNoPatologicos;
+	private List<GmjAntecedentesHdoFamiliaresDTO> antecedentesHdoFamiliares;
+	private GmjAntecedentesGinecObsDTO antecedentesGinecobstetricos;
+	private GmjAntecPersNoPatologicosDTO antecNoPatologicos;
+	private List<GmjAntecPersPatologicosDTO> antecPatologicos;
+	private List<GmjInmunizacionesPacienteDTO> inmunizaciones;
+	public List<GmjAntecedentesHdoFamiliaresDTO> getAntecedentesHdoFamiliares() {
+		return antecedentesHdoFamiliares;
 	}
-	public void setAntecedentesPersNoPatologicos(GmjAntecPersNoPatologicosDTO antecedentesPersNoPatologicos) {
-		this.antecedentesPersNoPatologicos = antecedentesPersNoPatologicos;
+	public void setAntecedentesHdoFamiliares(List<GmjAntecedentesHdoFamiliaresDTO> antecedentesHdoFamiliares) {
+		this.antecedentesHdoFamiliares = antecedentesHdoFamiliares;
 	}
-	public List<GmjInmunizacionesPacienteDTO> getInmunizacionesPaciente() {
-		return inmunizacionesPaciente;
+	public GmjAntecedentesGinecObsDTO getAntecedentesGinecobstetricos() {
+		return antecedentesGinecobstetricos;
 	}
-	public void setInmunizacionesPaciente(List<GmjInmunizacionesPacienteDTO> inmunizacionesPaciente) {
-		this.inmunizacionesPaciente = inmunizacionesPaciente;
+	public void setAntecedentesGinecobstetricos(GmjAntecedentesGinecObsDTO antecedentesGinecobstetricos) {
+		this.antecedentesGinecobstetricos = antecedentesGinecobstetricos;
 	}
-	public List<GmjAntecedentesHdoFamiliaresDTO> getAntecedentesHdoFam() {
-		return antecedentesHdoFam;
+	public GmjAntecPersNoPatologicosDTO getAntecNoPatologicos() {
+		return antecNoPatologicos;
 	}
-	public void setAntecedentesHdoFam(List<GmjAntecedentesHdoFamiliaresDTO> antecedentesHdoFam) {
-		this.antecedentesHdoFam = antecedentesHdoFam;
+	public void setAntecNoPatologicos(GmjAntecPersNoPatologicosDTO antecNoPatologicos) {
+		this.antecNoPatologicos = antecNoPatologicos;
 	}
-	public GmjAntecedentesGinecObsDTO getAntecedentesGinecObstetricos() {
-		return antecedentesGinecObstetricos;
+	public List<GmjAntecPersPatologicosDTO> getAntecPatologicos() {
+		return antecPatologicos;
 	}
-	public void setAntecedentesGinecObstetricos(GmjAntecedentesGinecObsDTO antecedentesGinecObstetricos) {
-		this.antecedentesGinecObstetricos = antecedentesGinecObstetricos;
+	public void setAntecPatologicos(List<GmjAntecPersPatologicosDTO> antecPatologicos) {
+		this.antecPatologicos = antecPatologicos;
 	}
-	
+	public List<GmjInmunizacionesPacienteDTO> getInmunizaciones() {
+		return inmunizaciones;
+	}
+	public void setInmunizaciones(List<GmjInmunizacionesPacienteDTO> inmunizaciones) {
+		this.inmunizaciones = inmunizaciones;
+	}
 	
 }

@@ -13,34 +13,39 @@ import mx.com.mundodafne.gmj.orq.dto.notamedica.GmjNotaMedicaPacienteDTO;
  */
 public class GmjObjetoPacienteDTO implements java.io.Serializable{
 	
-	private GmjHojaFrontalDTO hojaFrontalDTO;
-	private GmjHistorialClinicoDTO historialClinicoDTO;
-	private GmjNotaMedicaPacienteDTO notasMedicasDTO;
-	private GmjNotaEnfermeriaPacienteDTO notasEnfermeriaDTO;
-	public GmjHojaFrontalDTO getHojaFrontalDTO() {
-		return hojaFrontalDTO;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2133048018464449952L;
+	private GmjHojaFrontalDTO hojaFrontal;
+	private GmjHistorialClinicoDTO historiaClinica;
+	private GmjNotaMedicaPacienteDTO notaMedicaPaciente;
+	private GmjNotaEnfermeriaPacienteDTO notaEnfermeriaPx;
+	public GmjHojaFrontalDTO getHojaFrontal() {
+		return hojaFrontal;
 	}
-	public void setHojaFrontalDTO(GmjHojaFrontalDTO hojaFrontalDTO) {
-		this.hojaFrontalDTO = hojaFrontalDTO;
+	public void setHojaFrontal(GmjHojaFrontalDTO hojaFrontal) {
+		this.hojaFrontal = hojaFrontal;
 	}
-	public GmjHistorialClinicoDTO getHistorialClinicoDTO() {
-		return historialClinicoDTO;
+	public GmjHistorialClinicoDTO getHistoriaClinica() {
+		return historiaClinica;
 	}
-	public void setHistorialClinicoDTO(GmjHistorialClinicoDTO historialClinicoDTO) {
-		this.historialClinicoDTO = historialClinicoDTO;
+	public void setHistoriaClinica(GmjHistorialClinicoDTO historiaClinica) {
+		this.historiaClinica = historiaClinica;
 	}
-	public GmjNotaMedicaPacienteDTO getNotasMedicasDTO() {
-		return notasMedicasDTO;
+	public GmjNotaMedicaPacienteDTO getNotaMedicaPaciente() {
+		return notaMedicaPaciente;
 	}
-	public void setNotasMedicasDTO(GmjNotaMedicaPacienteDTO notasMedicasDTO) {
-		this.notasMedicasDTO = notasMedicasDTO;
+	public void setNotaMedicaPaciente(GmjNotaMedicaPacienteDTO notaMedicaPaciente) {
+		this.notaMedicaPaciente = notaMedicaPaciente;
 	}
-	public GmjNotaEnfermeriaPacienteDTO getNotasEnfermeriaDTO() {
-		return notasEnfermeriaDTO;
+	public GmjNotaEnfermeriaPacienteDTO getNotaEnfermeriaPx() {
+		return notaEnfermeriaPx;
 	}
-	public void setNotasEnfermeriaDTO(GmjNotaEnfermeriaPacienteDTO notasEnfermeriaDTO) {
-		this.notasEnfermeriaDTO = notasEnfermeriaDTO;
-	}
-	
+	public void setNotaEnfermeriaPx(GmjNotaEnfermeriaPacienteDTO notaEnfermeriaPx) {
+		this.notaEnfermeriaPx = notaEnfermeriaPx;
+	}	
+
+
 	
 }
