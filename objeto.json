@@ -1,0 +1,213 @@
+{
+    "hojaFrontal": {
+        "informacionPx": {
+            "tipoConsulta": "Primera vez",
+            "nombrePropio1": "sdf",
+            "nombrePropio2": "sdf",
+            "apellidoPaterno": "sdf",
+            "apellidoMaterno": "sdf",
+            "nacionalidad": "sdf",
+            "edad": 0,
+            "genero": "M",
+            "fechaNacimiento": "2024-07-04T03:24:40.000Z",
+            "curp": "sdfsdfsdfsdfdsfsdf",
+            "motivoConsulta": "sfsfsdfsdfsdfsdfsdf",
+            "cuentaConCartilla": "true",
+            "meses": "0"
+        },
+        "domicilioPaciente": {},
+        "datosContacto": {}
+    },
+    "historiaClinica": {
+        "antecedentesHdoFamiliares": [
+            {
+                "familiar": "Paterno",
+                "parentesco": "asd",
+                "morbilidadFamilar": "asd"
+            }
+        ],
+        "antecedentesGinecobstetricos": {
+            "fechaUltimaCitologia": "2024-07-11T03:24:40.000Z",
+            "fechaUltimaRegla": "2024-07-11T03:24:40.000Z",
+            "fechaUltimoParto": "2024-07-11T03:24:40.000Z",
+            "hijosVivos": 5,
+            "numAborts": "1",
+            "numCesareas": "3",
+            "numGestas": 6,
+            "numPartos": "2",
+            "inicioVidaSexual": "2024-07-11T03:24:40.000Z"
+        },
+        "antecNoPatologicos": {
+            "conceptoFauna": [
+                {
+                    "concepto": "Perros",
+                    "situacion": ""
+                },
+                {
+                    "concepto": "Gatos",
+                    "situacion": ""
+                },
+                {
+                    "concepto": "Otros",
+                    "situacion": "",
+                    "otros": ""
+                }
+            ],
+            "conceptoVivienda": [
+                {
+                    "concepto": "Luz",
+                    "situacion": true
+                },
+                {
+                    "concepto": "Agua",
+                    "situacion": true
+                },
+                {
+                    "concepto": "Drenaje",
+                    "situacion": true
+                }
+            ],
+            "concepto": [
+                {
+                    "concepto": "Dieta",
+                    "situacion": "buena"
+                },
+                {
+                    "concepto": "Vivienda",
+                    "situacion": "regular"
+                },
+                {
+                    "concepto": "Promiscuidad",
+                    "situacion": "S"
+                },
+                {
+                    "concepto": "Hacinamiento",
+                    "situacion": "N"
+                }
+            ],
+            "inmunizaciones": [
+                {
+                    "biologicoNombre": "asd",
+                    "fechaAplicacion": "2024-07-04T03:24:40.000Z"
+                }
+            ]
+        },
+        "antecPatologicos": [
+            {
+                "nombreEnfermedad": "hipertensionArterial",
+                "tipoEnfermedad": "d",
+                "tiempoEvolucion": "d",
+                "tratamientoLlevado": "d"
+            }
+        ],
+        "interrogPx": {
+            "exploracionesFisicas": [
+                {
+                    "zonaInspeccion": "Piel y Faneras",
+                    "observacionesInspeccion": "Faneras"
+                },
+                {
+                    "zonaInspeccion": "Cabeza y Organos de los Sentidos",
+                    "observacionesInspeccion": "Cuello"
+                },
+                {
+                    "zonaInspeccion": "Cuello",
+                    "observacionesInspeccion": "Sentidos"
+                },
+                {
+                    "zonaInspeccion": "Torax",
+                    "observacionesInspeccion": "Torax"
+                },
+                {
+                    "zonaInspeccion": "Abdomen",
+                    "observacionesInspeccion": "sdf"
+                },
+                {
+                    "zonaInspeccion": "Columna Vertebral",
+                    "observacionesInspeccion": "sdf"
+                },
+                {
+                    "zonaInspeccion": "Genitales",
+                    "observacionesInspeccion": "sdf"
+                },
+                {
+                    "zonaInspeccion": "Ano y Recto",
+                    "observacionesInspeccion": "sdf"
+                }
+            ],
+            "aparatoYSistemas": [
+                {
+                    "concepto": "Exploracion Vaginal",
+                    "semioloia": "a"
+                },
+                {
+                    "concepto": "Extremidades",
+                    "semioloia": "Extremidades"
+                },
+                {
+                    "concepto": "Organos de los sentidos",
+                    "semioloia": "Organos de los sentidos"
+                },
+                {
+                    "concepto": "Sistema nervioso central",
+                    "semioloia": "Sistema nervioso central"
+                },
+                {
+                    "concepto": "Sistema nervioso periferico",
+                    "semioloia": "periferico"
+                },
+                {
+                    "concepto": "Aparato Respiratorio",
+                    "semioloia": "Respiratorio"
+                },
+                {
+                    "concepto": "Sistema Cardivascular",
+                    "semioloia": "Cardivascular"
+                },
+                {
+                    "concepto": "Aparato Digestivo",
+                    "semioloia": "digestivo"
+                },
+                {
+                    "concepto": "Aparato Renal y Urinario",
+                    "semioloia": "Urinario"
+                },
+                {
+                    "concepto": "Aparato Genital",
+                    "semioloia": "Genital"
+                },
+                {
+                    "concepto": "Sistema Esqueletico y Muscular",
+                    "semioloia": "Esqueletico "
+                }
+            ]
+        }
+    },
+    "notaMedicaPaciente": {
+        "cedulaProfNM": "231321454444",
+        "exploracion": "",
+        "hallazgos": "",
+        "recomendaciones": "",
+        "impresionDiagnostica": "sdfsdfsdfsdfsdf",
+        "realizoNM": "dfsdfsdfdsf",
+        "analisisYComentarios": "sdfsdfsdfsdffsd",
+        "tratamiento": "sdfsdfsdfsdfsdf"
+    },
+    "notaEnfermeriaPx": {
+        "accionesDxEnf": "sdsdfsdf",
+        "accionesNEnf": "sdfsdfsdf",
+        "cedulaProfNEnf": "",
+        "realizoNEnf": "sdfsdf",
+        "resultadosNEnf": "sdfsdf",
+        "signosVitales": {
+            "temperatura": 0,
+            "frecuenciaCardiaca": 40,
+            "presionDiast": 20,
+            "presionSist": 10,
+            "cuentaConAyuno": "true",
+            "oxigenacion": 30,
+            "habitusExterior": "sdf",
+            "padecimientoActual": "sdf"
+        }
+    }
+}
