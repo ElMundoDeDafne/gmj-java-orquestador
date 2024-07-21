@@ -1,94 +1,124 @@
 package mx.com.mundodafne.gmj.orq.dto.notaenfermeria;
 
+import java.util.List;
+
 public class GmjNotaEnfermeriaPacienteDTO implements java.io.Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6974111988462607667L;
-	private double presionSist;
-	private double presionDiast;
-	private int frecuenciaResp;
-	private int frecuenciaCard;
-	private char ayuno;
-	private double temperatura;
+	private String accionesDxEnf;
+	private String accionesNEnf;
+	private String cedulaProfNEnf;
+	private String realizoNEnf;
+	private String resultadosNEnf;
+	private List<SignosVitales> signosVitales;
+		
+}
+
+class SignosVitales {
+	private byte temperatura;
+	private byte frecuenciaCardiaca;
+	private byte presionDiast;
+	private byte presionSist;
+	private String cuentaConAyuno;
+	private byte oxigenacion;
 	private String habitusExterior;
 	private String padecimientoActual;
-	private String accionesDxEnf;
-	private String accionesEnf;
-	private String realizo;
-	private String cedulaProfesional;
-	
-	public double getPresionSist() {
-		return presionSist;
-	}
-	public void setPresionSist(double presionSist) {
-		this.presionSist = presionSist;
-	}
-	public double getPresionDiast() {
-		return presionDiast;
-	}
-	public void setPresionDiast(double presionDiast) {
-		this.presionDiast = presionDiast;
-	}
-	public int getFrecuenciaResp() {
-		return frecuenciaResp;
-	}
-	public void setFrecuenciaResp(int frecuenciaResp) {
-		this.frecuenciaResp = frecuenciaResp;
-	}
-	public int getFrecuenciaCard() {
-		return frecuenciaCard;
-	}
-	public void setFrecuenciaCard(int frecuenciaCard) {
-		this.frecuenciaCard = frecuenciaCard;
-	}
-	public char getAyuno() {
-		return ayuno;
-	}
-	public void setAyuno(char ayuno) {
-		this.ayuno = ayuno;
-	}
-	public double getTemperatura() {
+	/**
+	 * @return the temperatura
+	 */
+	public byte getTemperatura() {
 		return temperatura;
 	}
-	public void setTemperatura(double temperatura) {
+	/**
+	 * @param temperatura the temperatura to set
+	 */
+	public void setTemperatura(byte temperatura) {
 		this.temperatura = temperatura;
 	}
+	/**
+	 * @return the frecuenciaCardiaca
+	 */
+	public byte getFrecuenciaCardiaca() {
+		return frecuenciaCardiaca;
+	}
+	/**
+	 * @param frecuenciaCardiaca the frecuenciaCardiaca to set
+	 */
+	public void setFrecuenciaCardiaca(byte frecuenciaCardiaca) {
+		this.frecuenciaCardiaca = frecuenciaCardiaca;
+	}
+	/**
+	 * @return the presionDiast
+	 */
+	public byte getPresionDiast() {
+		return presionDiast;
+	}
+	/**
+	 * @param presionDiast the presionDiast to set
+	 */
+	public void setPresionDiast(byte presionDiast) {
+		this.presionDiast = presionDiast;
+	}
+	/**
+	 * @return the presionSist
+	 */
+	public byte getPresionSist() {
+		return presionSist;
+	}
+	/**
+	 * @param presionSist the presionSist to set
+	 */
+	public void setPresionSist(byte presionSist) {
+		this.presionSist = presionSist;
+	}
+	/**
+	 * @return the cuentaConAyuno
+	 */
+	public String getCuentaConAyuno() {
+		return cuentaConAyuno;
+	}
+	/**
+	 * @param cuentaConAyuno the cuentaConAyuno to set
+	 */
+	public void setCuentaConAyuno(String cuentaConAyuno) {
+		this.cuentaConAyuno = cuentaConAyuno;
+	}
+	/**
+	 * @return the oxigenacion
+	 */
+	public byte getOxigenacion() {
+		return oxigenacion;
+	}
+	/**
+	 * @param oxigenacion the oxigenacion to set
+	 */
+	public void setOxigenacion(byte oxigenacion) {
+		this.oxigenacion = oxigenacion;
+	}
+	/**
+	 * @return the habitusExterior
+	 */
 	public String getHabitusExterior() {
 		return habitusExterior;
 	}
+	/**
+	 * @param habitusExterior the habitusExterior to set
+	 */
 	public void setHabitusExterior(String habitusExterior) {
 		this.habitusExterior = habitusExterior;
 	}
+	/**
+	 * @return the padecimientoActual
+	 */
 	public String getPadecimientoActual() {
 		return padecimientoActual;
 	}
+	/**
+	 * @param padecimientoActual the padecimientoActual to set
+	 */
 	public void setPadecimientoActual(String padecimientoActual) {
 		this.padecimientoActual = padecimientoActual;
 	}
-	public String getAccionesDxEnf() {
-		return accionesDxEnf;
-	}
-	public void setAccionesDxEnf(String accionesDxEnf) {
-		this.accionesDxEnf = accionesDxEnf;
-	}
-	public String getAccionesEnf() {
-		return accionesEnf;
-	}
-	public void setAccionesEnf(String accionesEnf) {
-		this.accionesEnf = accionesEnf;
-	}
-	public String getRealizo() {
-		return realizo;
-	}
-	public void setRealizo(String realizo) {
-		this.realizo = realizo;
-	}
-	public String getCedulaProfesional() {
-		return cedulaProfesional;
-	}
-	public void setCedulaProfesional(String cedulaProfesional) {
-		this.cedulaProfesional = cedulaProfesional;
-	}
-	
 }

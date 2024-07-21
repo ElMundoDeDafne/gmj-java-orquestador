@@ -9,30 +9,60 @@ public class GmjAntecPersNoPatologicosDTO implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -5835527204473892196L;
-	private List<ConceptoFauna> conceptosFauna;
-	private List<ConceptoVivienda> conceptosVivienda;
-	private List<Concepto> conceptos;
-	
-	public List<Concepto> getConceptos() {
-		return conceptos;
-	}
-	public void setConceptos(List<Concepto> conceptos) {
-		this.conceptos = conceptos;
-	}
-	public List<ConceptoFauna> getConceptosFauna() {
-		return conceptosFauna;
-	}
-	public void setConceptosFauna(List<ConceptoFauna> conceptosFauna) {
-		this.conceptosFauna = conceptosFauna;
-	}
-	public List<ConceptoVivienda> getConceptosVivienda() {
-		return conceptosVivienda;
-	}
-	public void setConceptosVivienda(List<ConceptoVivienda> conceptosVivienda) {
-		this.conceptosVivienda = conceptosVivienda;
-	}
-	
+	private List<ConceptoFauna> conceptoFauna;
+	private List<ConceptoVivienda> conceptoVivienda;
+	private List<Concepto> concepto;
+	private List<GmjInmunizacionesPacienteDTO> inmunizaciones;
 
+	/**
+	 * @return the inmunizaciones
+	 */
+	public List<GmjInmunizacionesPacienteDTO> getInmunizaciones() {
+		return inmunizaciones;
+	}
+	/**
+	 * @param inmunizaciones the inmunizaciones to set
+	 */
+	public void setInmunizaciones(List<GmjInmunizacionesPacienteDTO> inmunizaciones) {
+		this.inmunizaciones = inmunizaciones;
+	}
+	/**
+	 * @return the conceptoFauna
+	 */
+	public List<ConceptoFauna> getConceptoFauna() {
+		return conceptoFauna;
+	}
+	/**
+	 * @param conceptoFauna the conceptoFauna to set
+	 */
+	public void setConceptoFauna(List<ConceptoFauna> conceptoFauna) {
+		this.conceptoFauna = conceptoFauna;
+	}
+	/**
+	 * @return the conceptoVivienda
+	 */
+	public List<ConceptoVivienda> getConceptoVivienda() {
+		return conceptoVivienda;
+	}
+	/**
+	 * @param conceptoVivienda the conceptoVivienda to set
+	 */
+	public void setConceptoVivienda(List<ConceptoVivienda> conceptoVivienda) {
+		this.conceptoVivienda = conceptoVivienda;
+	}
+	/**
+	 * @return the concepto
+	 */
+	public List<Concepto> getConcepto() {
+		return concepto;
+	}
+	/**
+	 * @param concepto the concepto to set
+	 */
+	public void setConcepto(List<Concepto> concepto) {
+		this.concepto = concepto;
+	}
+	
 }
 
 class ConceptoVivienda {

@@ -14,33 +14,57 @@ public class GmjAntecPersPatologicosDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -39220933481017854L;
-	private String enfermedad;
-	private String tipo;
+	private String nombreEnfermedad;
+	private String tipoEnfermedad;
 	private String tiempoEvolucion;
-	private String tratamiento;
-	public String getEnfermedad() {
-		return enfermedad;
+	private String tratamientoLlevado;
+	/**
+	 * @return the nombreEnfermedad
+	 */
+	public String getNombreEnfermedad() {
+		return nombreEnfermedad;
 	}
-	public void setEnfermedad(String enfermedad) {
-		this.enfermedad = enfermedad;
+	/**
+	 * @param nombreEnfermedad the nombreEnfermedad to set
+	 */
+	public void setNombreEnfermedad(String nombreEnfermedad) {
+		this.nombreEnfermedad = nombreEnfermedad;
 	}
-	public String getTipo() {
-		return tipo;
+	/**
+	 * @return the tipoEnfermedad
+	 */
+	public String getTipoEnfermedad() {
+		return tipoEnfermedad;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	/**
+	 * @param tipoEnfermedad the tipoEnfermedad to set
+	 */
+	public void setTipoEnfermedad(String tipoEnfermedad) {
+		this.tipoEnfermedad = tipoEnfermedad;
 	}
+	/**
+	 * @return the tiempoEvolucion
+	 */
 	public String getTiempoEvolucion() {
 		return tiempoEvolucion;
 	}
+	/**
+	 * @param tiempoEvolucion the tiempoEvolucion to set
+	 */
 	public void setTiempoEvolucion(String tiempoEvolucion) {
 		this.tiempoEvolucion = tiempoEvolucion;
 	}
-	public String getTratamiento() {
-		return tratamiento;
+	/**
+	 * @return the tratamientoLlevado
+	 */
+	public String getTratamientoLlevado() {
+		return tratamientoLlevado;
 	}
-	public void setTratamiento(String tratamiento) {
-		this.tratamiento = tratamiento;
+	/**
+	 * @param tratamientoLlevado the tratamientoLlevado to set
+	 */
+	public void setTratamientoLlevado(String tratamientoLlevado) {
+		this.tratamientoLlevado = tratamientoLlevado;
 	}
 	
 }

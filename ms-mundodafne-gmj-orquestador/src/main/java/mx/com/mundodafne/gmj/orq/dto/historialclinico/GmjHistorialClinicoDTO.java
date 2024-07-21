@@ -19,7 +19,8 @@ public class GmjHistorialClinicoDTO implements Serializable {
 	private GmjAntecedentesGinecObsDTO antecedentesGinecobstetricos;
 	private GmjAntecPersNoPatologicosDTO antecNoPatologicos;
 	private List<GmjAntecPersPatologicosDTO> antecPatologicos;
-	private List<GmjInmunizacionesPacienteDTO> inmunizaciones;
+	private List<GmjInterrogatorioPacienteDTO> interrogPx;
+	
 	public List<GmjAntecedentesHdoFamiliaresDTO> getAntecedentesHdoFamiliares() {
 		return antecedentesHdoFamiliares;
 	}
@@ -44,11 +45,17 @@ public class GmjHistorialClinicoDTO implements Serializable {
 	public void setAntecPatologicos(List<GmjAntecPersPatologicosDTO> antecPatologicos) {
 		this.antecPatologicos = antecPatologicos;
 	}
-	public List<GmjInmunizacionesPacienteDTO> getInmunizaciones() {
-		return inmunizaciones;
+	/**
+	 * @return the interrogPx
+	 */
+	public List<GmjInterrogatorioPacienteDTO> getInterrogPx() {
+		return interrogPx;
 	}
-	public void setInmunizaciones(List<GmjInmunizacionesPacienteDTO> inmunizaciones) {
-		this.inmunizaciones = inmunizaciones;
+	/**
+	 * @param interrogPx the interrogPx to set
+	 */
+	public void setInterrogPx(List<GmjInterrogatorioPacienteDTO> interrogPx) {
+		this.interrogPx = interrogPx;
 	}
 	
 }

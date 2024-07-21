@@ -13,59 +13,119 @@ public class GmjAntecedentesGinecObsDTO implements Serializable{
 	private LocalDate fechaUltimaCitologia;
 	private LocalDate fechaUltimaRegla;
 	private LocalDate fechaUltimoParto;
-	private LocalDate fechaInicioVidaSexual;
-	private int totalHijosVivos;
-	private int numGestas;
-	private int numAbortos;
-	private int numPartos;
+	private LocalDate inicioVidaSexual;
+	private byte hijosVivos;
+	private byte numGestas;
+	private byte numAborts;
+	private byte numPartos;
+	private byte numCesareas;
+	/**
+	 * @return the fechaUltimaCitologia
+	 */
 	public LocalDate getFechaUltimaCitologia() {
 		return fechaUltimaCitologia;
 	}
+	/**
+	 * @param fechaUltimaCitologia the fechaUltimaCitologia to set
+	 */
 	public void setFechaUltimaCitologia(LocalDate fechaUltimaCitologia) {
 		this.fechaUltimaCitologia = fechaUltimaCitologia;
 	}
+	/**
+	 * @return the fechaUltimaRegla
+	 */
 	public LocalDate getFechaUltimaRegla() {
 		return fechaUltimaRegla;
 	}
+	/**
+	 * @param fechaUltimaRegla the fechaUltimaRegla to set
+	 */
 	public void setFechaUltimaRegla(LocalDate fechaUltimaRegla) {
 		this.fechaUltimaRegla = fechaUltimaRegla;
 	}
+	/**
+	 * @return the fechaUltimoParto
+	 */
 	public LocalDate getFechaUltimoParto() {
 		return fechaUltimoParto;
 	}
+	/**
+	 * @param fechaUltimoParto the fechaUltimoParto to set
+	 */
 	public void setFechaUltimoParto(LocalDate fechaUltimoParto) {
 		this.fechaUltimoParto = fechaUltimoParto;
 	}
-	public LocalDate getFechaInicioVidaSexual() {
-		return fechaInicioVidaSexual;
+	/**
+	 * @return the inicioVidaSexual
+	 */
+	public LocalDate getInicioVidaSexual() {
+		return inicioVidaSexual;
 	}
-	public void setFechaInicioVidaSexual(LocalDate fechaInicioVidaSexual) {
-		this.fechaInicioVidaSexual = fechaInicioVidaSexual;
+	/**
+	 * @param inicioVidaSexual the inicioVidaSexual to set
+	 */
+	public void setInicioVidaSexual(LocalDate inicioVidaSexual) {
+		this.inicioVidaSexual = inicioVidaSexual;
 	}
-	public int getTotalHijosVivos() {
-		return totalHijosVivos;
+	/**
+	 * @return the hijosVivos
+	 */
+	public byte getHijosVivos() {
+		return hijosVivos;
 	}
-	public void setTotalHijosVivos(int totalHijosVivos) {
-		this.totalHijosVivos = totalHijosVivos;
+	/**
+	 * @param hijosVivos the hijosVivos to set
+	 */
+	public void setHijosVivos(byte hijosVivos) {
+		this.hijosVivos = hijosVivos;
 	}
-	public int getNumGestas() {
+	/**
+	 * @return the numGestas
+	 */
+	public byte getNumGestas() {
 		return numGestas;
 	}
-	public void setNumGestas(int numGestas) {
+	/**
+	 * @param numGestas the numGestas to set
+	 */
+	public void setNumGestas(byte numGestas) {
 		this.numGestas = numGestas;
 	}
-	public int getNumAbortos() {
-		return numAbortos;
+	/**
+	 * @return the numAborts
+	 */
+	public byte getNumAborts() {
+		return numAborts;
 	}
-	public void setNumAbortos(int numAbortos) {
-		this.numAbortos = numAbortos;
+	/**
+	 * @param numAborts the numAborts to set
+	 */
+	public void setNumAborts(byte numAborts) {
+		this.numAborts = numAborts;
 	}
-	public int getNumPartos() {
+	/**
+	 * @return the numPartos
+	 */
+	public byte getNumPartos() {
 		return numPartos;
 	}
-	public void setNumPartos(int numPartos) {
+	/**
+	 * @param numPartos the numPartos to set
+	 */
+	public void setNumPartos(byte numPartos) {
 		this.numPartos = numPartos;
 	}
-	
+	/**
+	 * @return the numCesareas
+	 */
+	public byte getNumCesareas() {
+		return numCesareas;
+	}
+	/**
+	 * @param numCesareas the numCesareas to set
+	 */
+	public void setNumCesareas(byte numCesareas) {
+		this.numCesareas = numCesareas;
+	}
 	
 }

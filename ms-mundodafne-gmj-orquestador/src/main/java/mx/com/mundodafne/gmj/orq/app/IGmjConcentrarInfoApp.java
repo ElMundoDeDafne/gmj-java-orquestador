@@ -3,13 +3,18 @@
  */
 package mx.com.mundodafne.gmj.orq.app;
 
+import org.springframework.http.ResponseEntity;
+
+import mx.com.mundodafne.gmj.orq.dto.hojafrontal.GmjHojaFrontalDTO;
+
 /**
  * 
  */
 public interface IGmjConcentrarInfoApp {
-	void registrarInfoHistorialClinico();
-	void registrarInfoHojaFrontal();
-	void registrarInfoNotaMedicaPaciente();
-	void registrarInfoNotaEnfermeriaPaciente();
+	ResponseEntity<Object> registrarInfoHistorialClinico(GmjHojaFrontalDTO hojaFrontal);
+	ResponseEntity<Object> registrarInfoNotaMedicaPaciente();
+	ResponseEntity<Object> registrarInfoNotaEnfermeriaPaciente();
+	ResponseEntity<Object> registrarInfoHojaFrontal(GmjHojaFrontalDTO hojaFrontal);
+	
 	
 }
