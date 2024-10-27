@@ -3,9 +3,11 @@
  */
 package mx.com.mundodafne.gmj.orq.app;
 
+import org.springframework.http.ResponseEntity;
+
 /**
  * 
  */
-public class IGmjImprimirRecetaPDFAppImpl {
-
+public interface IGmjImprimirRecetaPDFAppImpl {
+	ResponseEntity<Object> generarRecetaPDF();
 }
