@@ -2,6 +2,7 @@ package mx.com.mundodafne.ms.reportes.gmj.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class RepManejarReportesController {
 	@Autowired private RepImprimirReporteApp imprimirReporteApp;
 	
 	@GetMapping("/reporte/get")
-	public RepSalidaReportesDTO obtenerReportePorCodigo(RepEntradaReportesDTO entradaReportesDTO) {
+	public RepSalidaReportesDTO obtenerReportePorCodigo(@RequestBody RepEntradaReportesDTO entradaReportesDTO) {
 		return imprimirReporteApp.obtenerReportePorCodigo(entradaReportesDTO);
 	}
 }
