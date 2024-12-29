@@ -37,15 +37,18 @@ public class Pruebas {
 	static String regresarBase64() {
 		String base64 = "";
 		Base64 b;
-		
-		try {
-			Map<String, Object> parametros = new HashMap();
+		Map<String, Object> parametros = new HashMap();
+		try {			
 	        String pdfFile = "c:/tmp/reportes/output.pdf"; // Salida del archivo PDF
 			parametros.put("NOMBRE_PACIENTE","CHRISTIAN YAMIL CASTILLO COVARRUBIAS");
 			parametros.put("DIAGNOSTICO_PACIENTE","PROBABLE EM");
 			parametros.put("NOTAS_RECETA_OBSERV","OBSERVACIONES DEL MEDICO EN TURNO");
 			parametros.put("FECHA_IMPRESION_REC","27/10/2024 07:15 AM");
 			parametros.put("EDAD_PACIENTE","33");
+			parametros.put("NOMBRE_MEDICO","DR. YAMIL CASTILLO C.");
+			parametros.put("CED_PROF","000165497");
+			parametros.put("FOLIO_P","1001324657-1");
+			parametros.put("PX_TRATAMIENTO","Inyección diaria intra muscular Acetato Glatiramer 40 mg c/ 28 jeringas");
 			JasperReport reporte = JasperCompileManager.compileReport("C:/Users/Christian/Documents/Proyectos/SW expediente clinico/reports/recetaMedicaGMJ.jrxml");
 			JasperPrint print = JasperFillManager.fillReport(reporte, parametros,new JREmptyDataSource());
             JasperExportManager.exportReportToPdfFile(print, pdfFile);
