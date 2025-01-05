@@ -57,11 +57,12 @@ public class RepImprimirReporteAppImpl implements RepImprimirReporteApp{
 			}
 			JasperReport reporte = JasperCompileManager.compileReport("C:\\Users\\Christian\\Documents\\Proyectos\\SW expediente clinico\\reports\\recetaMedicaGMJ.jrxml");
 			JasperPrint print = JasperFillManager.fillReport(reporte, parametrosReporte,new JREmptyDataSource());
-			JasperExportManager.exportReportToPdfFile(print, pdfFile);
+//			JasperExportManager.exportReportToPdfFile(print, pdfFile);
+//			JasperExportManager.exportReportToPdfFile(print, pdfFile);
 			byte[] pdfBytes = JasperExportManager.exportReportToPdf(print);
 			base64 = Base64.getEncoder().encodeToString(pdfBytes);
 			mensajes.add("Exito");
-			mensajes.add("Exportado a: "+pdfFile);
+//			mensajes.add("Exportado a: "+pdfFile);
 			salidaDTO.setMensajes(mensajes);
 			salidaDTO.setExito(true);
 			salidaDTO.setBase64(base64);
