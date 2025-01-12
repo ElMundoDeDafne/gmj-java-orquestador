@@ -1,0 +1,259 @@
+{
+	"hojaFrontal": {
+		"informacionPx": {
+			"tipoConsulta": "Primera vez",
+			"esDerechoHabiente": "S",
+			"nombrePropio1": "CHRISTIAN",
+			"nombrePropio2": "YAMIL",
+			"apellidoPaterno": "CASTILLO",
+			"apellidoMaterno": "COVARRUBIAS",
+			"nacionalidad": "MEXICANO",
+			"edad": 33,
+			"genero": "M",
+			"fechaNacimiento": "1991-02-12T06:00:00.000Z",
+			"curp": "CACC910212HSPSVH04",
+			"motivoConsulta": "DOLOR DE CABEZA",
+			"folio": "1005579964-7",
+			"cuentaConCartilla": "true",
+			"meses": "RN",
+			"ocupacion": "CAPTURISTA DE DATOS",
+			"derechoHabiencia": "IMSS",
+			"nss": "02229183765"
+		},
+		"domicilioPaciente": {
+			"codigoPostal": "42184",
+			"callePrincipal": "CALLe",
+			"entidad": "hidalgo",
+			"localidad": "jacala",
+			"municipio": "jacala",
+			"entreCalles1": "asd",
+			"entreCalles2": "asd"
+		},
+		"datosContacto": {
+			"numeroTelefonico": "7712149235",
+			"correoElectronico": "CYCCOV@GMAIL.COm"
+		}
+	},
+	"historiaClinica": {
+		"antecedentesHdoFamiliares": [
+			{
+				"desconoce": false,
+				"familiar": "Materno",
+				"parentesco": "abuelo",
+				"morbilidadFamilar": "diabetes"
+			},
+			{
+				"parentesco": "",
+				"familiar": "",
+				"morbilidadFamilar": ""
+			}
+		],
+		"antecedentesGinecobstetricos": {
+			"fechaUltimaCitologia": "",
+			"fechaUltimaRegla": "",
+			"fechaUltimoParto": "",
+			"hijosVivos": 0,
+			"numAborts": 0,
+			"numCesareas": 0,
+			"numGestas": 0,
+			"numPartos": 0,
+			"inicioVidaSexual": ""
+		},
+		"antecNoPatologicos": {
+			"conceptoFauna": [
+				{
+					"concepto": "Perros",
+					"situacion": true
+				},
+				{
+					"concepto": "Gatos",
+					"situacion": false
+				},
+				{
+					"concepto": "Otros",
+					"situacion": false,
+					"otros": ""
+				}
+			],
+			"conceptoVivienda": [
+				{
+					"concepto": "Luz",
+					"situacion": true
+				},
+				{
+					"concepto": "Agua",
+					"situacion": true
+				},
+				{
+					"concepto": "Drenaje",
+					"situacion": true
+				}
+			],
+			"concepto": [
+				{
+					"concepto": "Dieta",
+					"situacion": "buena"
+				},
+				{
+					"concepto": "Vivienda",
+					"situacion": "buena"
+				},
+				{
+					"concepto": "Promiscuidad",
+					"situacion": "N"
+				},
+				{
+					"concepto": "Hacinamiento",
+					"situacion": "N"
+				}
+			],
+			"inmunizaciones": [
+				{
+					"biologicoNombre": "Vacuna contra COVID-19",
+					"fechaAplicacion": "2024-12-28T16:08:21.000Z"
+				},
+				{
+					"fechaAplicacion": "",
+					"biologicoNombre": ""
+				}
+			]
+		},
+		"antecPatologicos": [
+			{
+				"nombreEnfermedad": "otro",
+				"otraEnfermedad": "esc mul",
+				"tipoEnfermedad": "remitente recurrente",
+				"tiempoEvolucion": "2 años",
+				"tratamientoLlevado": "asd"
+			},
+			{
+				"nombreEnfermedad": "",
+				"tipoEnfermedad": "",
+				"tiempoEvolucion": "",
+				"tratamientoLlevado": "",
+				"otraEnfermedad": ""
+			}
+		],
+		"interrogPx": {
+			"exploracionesFisicas": [
+				{
+					"zonaInspeccion": "Piel y Faneras",
+					"observacionesInspeccion": "5456"
+				},
+				{
+					"zonaInspeccion": "Cabeza y Organos de los Sentidos",
+					"observacionesInspeccion": "4"
+				},
+				{
+					"zonaInspeccion": "Cuello",
+					"observacionesInspeccion": "4"
+				},
+				{
+					"zonaInspeccion": "Torax",
+					"observacionesInspeccion": "564"
+				},
+				{
+					"zonaInspeccion": "Abdomen",
+					"observacionesInspeccion": "56"
+				},
+				{
+					"zonaInspeccion": "Columna Vertebral",
+					"observacionesInspeccion": "4564"
+				},
+				{
+					"zonaInspeccion": "Genitales",
+					"observacionesInspeccion": "564"
+				},
+				{
+					"zonaInspeccion": "Ano y Recto",
+					"observacionesInspeccion": "564"
+				}
+			],
+			"aparatoYSistemas": [
+				{
+					"concepto": "Exploracion Vaginal",
+					"semioloia": "asdasd"
+				},
+				{
+					"concepto": "Extremidades",
+					"semioloia": "asd"
+				},
+				{
+					"concepto": "Organos de los sentidos",
+					"semioloia": "asd"
+				},
+				{
+					"concepto": "Sistema nervioso central",
+					"semioloia": "asd"
+				},
+				{
+					"concepto": "Sistema nervioso periferico",
+					"semioloia": "45"
+				},
+				{
+					"concepto": "Aparato Respiratorio",
+					"semioloia": "465"
+				},
+				{
+					"concepto": "Sistema Cardivascular",
+					"semioloia": "45"
+				},
+				{
+					"concepto": "Aparato Digestivo",
+					"semioloia": "64"
+				},
+				{
+					"concepto": "Aparato Renal y Urinario",
+					"semioloia": "546"
+				},
+				{
+					"concepto": "Aparato Genital",
+					"semioloia": "54"
+				},
+				{
+					"concepto": "Sistema Esqueletico y Muscular",
+					"semioloia": "654"
+				}
+			]
+		}
+	},
+	"notaMedicaPaciente": {
+		"cedulaProfNM": "asd",
+		"exploracion": "",
+		"hallazgos": "",
+		"recomendaciones": "",
+		"impresionDiagnostica": "asd",
+		"realizoNM": "asd",
+		"resultados": "asd",
+		"analisisYComentarios": "asd",
+		"tratamiento": "asd"
+	},
+	"notaEnfermeriaPx": {
+		"accionesDxEnf": "asd",
+		"accionesNEnf": "asd",
+		"cedulaProfNEnf": "asd",
+		"realizoNEnf": "asd",
+		"resultadosNEnf": "asd",
+		"signosVitales": {
+			"temperatura": 37,
+			"frecuenciaCardiaca": 0,
+			"presionDiast": 0,
+			"presionSist": 0,
+			"cuentaConAyuno": "false",
+			"oxigenacion": 0,
+			"talla": 175,
+			"peso": 90,
+			"habitusExterior": "asd",
+			"padecimientoActual": "asd"
+		}
+	},
+	"consultaOdontologia": {
+		"hojaFrontalOdonto": {
+			"nombreUno": ""
+		},
+		"antecedentesFam": {},
+		"antecedentesPersonales": {},
+		"domicilio": {},
+		"observaciones": {}
+	}
+}
