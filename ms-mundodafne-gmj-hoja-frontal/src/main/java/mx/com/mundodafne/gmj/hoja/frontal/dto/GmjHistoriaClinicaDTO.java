@@ -16,9 +16,7 @@ public class GmjHistoriaClinicaDTO implements java.io.Serializable{
 	private GmjAntNoPatDTO[] antecNoPatologicos;
 	private GmjAntPatologicoDTO[] antecPatologicos;
 	private GmjInterrogPxDTO interrogPx;
-	private GmjNotaPacienteDTO notaMedicaPaciente;
-	private GmjNotaEnfermeriaDTO notaEnfermeriaPx;
-	private GmjConsultaOdontoDTO consultaOdontologia;
+
 	/**
 	 * @return the antecedentesHdoFamiliares
 	 */
@@ -79,40 +77,5 @@ public class GmjHistoriaClinicaDTO implements java.io.Serializable{
 	public void setInterrogPx(GmjInterrogPxDTO interrogPx) {
 		this.interrogPx = interrogPx;
 	}
-	/**
-	 * @return the notaMedicaPaciente
-	 */
-	public GmjNotaPacienteDTO getNotaMedicaPaciente() {
-		return notaMedicaPaciente;
-	}
-	/**
-	 * @param notaMedicaPaciente the notaMedicaPaciente to set
-	 */
-	public void setNotaMedicaPaciente(GmjNotaPacienteDTO notaMedicaPaciente) {
-		this.notaMedicaPaciente = notaMedicaPaciente;
-	}
-	/**
-	 * @return the notaEnfermeriaPx
-	 */
-	public GmjNotaEnfermeriaDTO getNotaEnfermeriaPx() {
-		return notaEnfermeriaPx;
-	}
-	/**
-	 * @param notaEnfermeriaPx the notaEnfermeriaPx to set
-	 */
-	public void setNotaEnfermeriaPx(GmjNotaEnfermeriaDTO notaEnfermeriaPx) {
-		this.notaEnfermeriaPx = notaEnfermeriaPx;
-	}
-	/**
-	 * @return the consultaOdontologia
-	 */
-	public GmjConsultaOdontoDTO getConsultaOdontologia() {
-		return consultaOdontologia;
-	}
-	/**
-	 * @param consultaOdontologia the consultaOdontologia to set
-	 */
-	public void setConsultaOdontologia(GmjConsultaOdontoDTO consultaOdontologia) {
-		this.consultaOdontologia = consultaOdontologia;
-	}
+
 }
