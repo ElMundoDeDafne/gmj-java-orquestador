@@ -11,6 +11,21 @@ public class GmjHojaFrontalDTO implements Serializable{
 	private GmjInformacionPacienteDTO informacionPx;
 	private GmjDomicilioPacienteDTO domicilioPaciente;
 	private GmjDatosContactoPacienteDTO datosContacto;
+	private GmjHistoriaClinicaDTO historiaClinica;
+	
+	
+	/**
+	 * @return the historiaClinica
+	 */
+	public GmjHistoriaClinicaDTO getHistoriaClinica() {
+		return historiaClinica;
+	}
+	/**
+	 * @param historiaClinica the historiaClinica to set
+	 */
+	public void setHistoriaClinica(GmjHistoriaClinicaDTO historiaClinica) {
+		this.historiaClinica = historiaClinica;
+	}
 	public GmjInformacionPacienteDTO getInformacionPx() {
 		return informacionPx;
 	}

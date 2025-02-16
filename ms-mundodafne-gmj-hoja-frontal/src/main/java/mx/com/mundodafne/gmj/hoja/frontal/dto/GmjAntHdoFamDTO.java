@@ -9,6 +9,10 @@ import java.io.Serializable;
  * 
  */
 public class GmjAntHdoFamDTO implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1770397198186349179L;
 	private boolean desconoce;
 	private String familiar;
 	private String parentesco;
