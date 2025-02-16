@@ -11,7 +11,7 @@ import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjFrontalRespSalidaDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjHojaFrontalDTO;
 
 @RestController
-@RequestMapping("/api/frontal/v/1.0")
+@RequestMapping("/api/frontal/v1.0")
 @CrossOrigin(origins = "*")
 public class GmjHojaFrontalController {
 	@Autowired private GmjHojaFrontalApp hojaFrontalApp;
