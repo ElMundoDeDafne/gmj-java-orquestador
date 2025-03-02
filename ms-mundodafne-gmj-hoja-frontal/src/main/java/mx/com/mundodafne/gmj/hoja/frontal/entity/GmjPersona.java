@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class GmjPersona {
+	
 	private Long idPaciente;
 	private String nombrePropio1;
 	private String nombrePropio2;

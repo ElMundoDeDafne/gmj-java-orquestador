@@ -14,7 +14,7 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 
 	@Override
 	public GmjFrontalRespSalidaDTO registrarInfoBD(GmjHojaFrontalDTO hojaFrontalDTO) {
-		GmjFrontalRespSalidaDTO salida = null;
+		GmjFrontalRespSalidaDTO salida = new GmjFrontalRespSalidaDTO();
 		String[] msgs = null;
 		GmjInformacionPacienteDTO infoPx = hojaFrontalDTO.getInformacionPx();
 		GmjDatosContactoPacienteDTO datosContactoPx = hojaFrontalDTO.getDatosContacto();

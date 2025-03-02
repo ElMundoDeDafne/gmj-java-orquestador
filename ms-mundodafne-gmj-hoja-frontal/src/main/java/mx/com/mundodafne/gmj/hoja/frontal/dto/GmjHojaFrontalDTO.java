@@ -12,6 +12,9 @@ public class GmjHojaFrontalDTO implements Serializable{
 	private GmjDomicilioPacienteDTO domicilioPaciente;
 	private GmjDatosContactoPacienteDTO datosContacto;
 	private GmjHistoriaClinicaDTO historiaClinica;
+	private GmjNotaEnfermeriaDTO notaEnfermeriaPx;
+	private GmjNotaMedicaDTO notaMedicaPaciente;
+	private GmjConsultaOdontoDTO consultaOdontologia;
 	
 	
 	/**
@@ -43,6 +46,42 @@ public class GmjHojaFrontalDTO implements Serializable{
 	}
 	public void setDatosContacto(GmjDatosContactoPacienteDTO datosContacto) {
 		this.datosContacto = datosContacto;
+	}
+	/**
+	 * @return the notaEnfermeriaPx
+	 */
+	public GmjNotaEnfermeriaDTO getNotaEnfermeriaPx() {
+		return notaEnfermeriaPx;
+	}
+	/**
+	 * @param notaEnfermeriaPx the notaEnfermeriaPx to set
+	 */
+	public void setNotaEnfermeriaPx(GmjNotaEnfermeriaDTO notaEnfermeriaPx) {
+		this.notaEnfermeriaPx = notaEnfermeriaPx;
+	}
+	/**
+	 * @return the notaMedicaPaciente
+	 */
+	public GmjNotaMedicaDTO getNotaMedicaPaciente() {
+		return notaMedicaPaciente;
+	}
+	/**
+	 * @param notaMedicaPaciente the notaMedicaPaciente to set
+	 */
+	public void setNotaMedicaPaciente(GmjNotaMedicaDTO notaMedicaPaciente) {
+		this.notaMedicaPaciente = notaMedicaPaciente;
+	}
+	/**
+	 * @return the consultaOdontologia
+	 */
+	public GmjConsultaOdontoDTO getConsultaOdontologia() {
+		return consultaOdontologia;
+	}
+	/**
+	 * @param consultaOdontologia the consultaOdontologia to set
+	 */
+	public void setConsultaOdontologia(GmjConsultaOdontoDTO consultaOdontologia) {
+		this.consultaOdontologia = consultaOdontologia;
 	}
 	
 }

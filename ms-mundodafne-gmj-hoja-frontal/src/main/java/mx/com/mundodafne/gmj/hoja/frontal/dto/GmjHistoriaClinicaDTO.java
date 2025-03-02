@@ -12,11 +12,10 @@ public class GmjHistoriaClinicaDTO implements java.io.Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private GmjAntHdoFamDTO[] antecedentesHdoFamiliares;
-	private GmjantGinecoDTO[] antecedentesGinecobstetricos;
-	private GmjAntNoPatDTO[] antecNoPatologicos;
+	private GmjantGinecoDTO antecedentesGinecobstetricos;
+	private GmjAntNoPatDTO antecNoPatologicos;
 	private GmjAntPatologicoDTO[] antecPatologicos;
 	private GmjInterrogPxDTO interrogPx;
-
 	/**
 	 * @return the antecedentesHdoFamiliares
 	 */
@@ -32,25 +31,25 @@ public class GmjHistoriaClinicaDTO implements java.io.Serializable{
 	/**
 	 * @return the antecedentesGinecobstetricos
 	 */
-	public GmjantGinecoDTO[] getAntecedentesGinecobstetricos() {
+	public GmjantGinecoDTO getAntecedentesGinecobstetricos() {
 		return antecedentesGinecobstetricos;
 	}
 	/**
 	 * @param antecedentesGinecobstetricos the antecedentesGinecobstetricos to set
 	 */
-	public void setAntecedentesGinecobstetricos(GmjantGinecoDTO[] antecedentesGinecobstetricos) {
+	public void setAntecedentesGinecobstetricos(GmjantGinecoDTO antecedentesGinecobstetricos) {
 		this.antecedentesGinecobstetricos = antecedentesGinecobstetricos;
 	}
 	/**
 	 * @return the antecNoPatologicos
 	 */
-	public GmjAntNoPatDTO[] getAntecNoPatologicos() {
+	public GmjAntNoPatDTO getAntecNoPatologicos() {
 		return antecNoPatologicos;
 	}
 	/**
 	 * @param antecNoPatologicos the antecNoPatologicos to set
 	 */
-	public void setAntecNoPatologicos(GmjAntNoPatDTO[] antecNoPatologicos) {
+	public void setAntecNoPatologicos(GmjAntNoPatDTO antecNoPatologicos) {
 		this.antecNoPatologicos = antecNoPatologicos;
 	}
 	/**
@@ -78,4 +77,5 @@ public class GmjHistoriaClinicaDTO implements java.io.Serializable{
 		this.interrogPx = interrogPx;
 	}
 
+	
 }
