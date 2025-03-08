@@ -2,7 +2,7 @@ package mx.com.mundodafne.gmj.hoja.frontal.entity;
 
 import jakarta.persistence.Entity;
 
-@Entity
+//@Entity
 public class GmjDomicilio {
 	
 	private Long idDomicilioPersona;
