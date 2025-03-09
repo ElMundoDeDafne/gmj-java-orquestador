@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import mx.com.mundodafne.gmj.hoja.frontal.app.GmjHojaFrontalApp;
 import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjFrontalRespSalidaDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjHojaFrontalDTO;
+import mx.com.mundodafne.gmj.hoja.frontal.exception.BusinessException;
 
 @RestController
 @RequestMapping("/api/frontal/v1.0")
@@ -18,7 +19,7 @@ public class GmjHojaFrontalController {
 	@Autowired private GmjHojaFrontalApp hojaFrontalApp;
 	
 	@PostMapping("/registro/get")
-	public GmjFrontalRespSalidaDTO registroHojaFrontal(@RequestBody GmjHojaFrontalDTO dto) {
+	public GmjFrontalRespSalidaDTO registroHojaFrontal(@RequestBody GmjHojaFrontalDTO dto) throws BusinessException{
 		return hojaFrontalApp.registrarInfoBD(dto);
 	}
 }
