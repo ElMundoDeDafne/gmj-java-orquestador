@@ -2,12 +2,19 @@ package mx.com.mundodafne.gmj.hoja.frontal.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="PER_SIGNOS_VITALES")
 public class PerSignosVitales {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_SIGNOS_VITALES")
 	private Long idSignosVitales;
 	private Integer presionSist;
 	private Integer presionDiast;

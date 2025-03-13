@@ -3,7 +3,11 @@ package mx.com.mundodafne.gmj.hoja.frontal.entity;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -11,9 +15,14 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "PER_PACIENTE")
 public class PerPaciente {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPaciente;
+	@Column(name = "MOTIVO_CONSULTA")
 	private String motivoConsulta;
+	@Column(name = "FECHA_INGRESO")
 	private LocalDateTime fechaIngreso;
+	@Column(name = "FECHA_ALTA")
 	private LocalDateTime fechaAlta;
 	private Double peso;
 	private Double imc;
@@ -28,7 +37,7 @@ public class PerPaciente {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID_PERSONA", referencedColumnName = "ID_PERSONA")
-	private PerPaciente persona;
+	private PerPersona persona;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID_SIGNOS_VITALES", referencedColumnName = "ID_SIGNOS_VITALES")
@@ -167,20 +176,6 @@ public class PerPaciente {
 	}
 
 	/**
-	 * @return the persona
-	 */
-	public PerPaciente getPersona() {
-		return persona;
-	}
-
-	/**
-	 * @param persona the persona to set
-	 */
-	public void setPersona(PerPaciente persona) {
-		this.persona = persona;
-	}
-
-	/**
 	 * @return the signosVitales
 	 */
 	public PerSignosVitales getSignosVitales() {
@@ -193,7 +188,18 @@ public class PerPaciente {
 	public void setSignosVitales(PerSignosVitales signosVitales) {
 		this.signosVitales = signosVitales;
 	}
-	
-	
-	
+
+	/**
+	 * @return the persona
+	 */
+	public PerPersona getPersona() {
+		return persona;
+	}
+
+	/**
+	 * @param persona the persona to set
+	 */
+	public void setPersona(PerPersona persona) {
+		this.persona = persona;
+	}
 }
