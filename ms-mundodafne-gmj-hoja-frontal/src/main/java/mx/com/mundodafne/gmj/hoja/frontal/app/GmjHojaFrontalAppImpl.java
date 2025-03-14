@@ -28,11 +28,16 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 		GmjFrontalRespSalidaDTO salida = new GmjFrontalRespSalidaDTO();
 		String[] msgs = null;
 		
-		GmjInformacionPacienteDTO infoPx = (GmjInformacionPacienteDTO) Validators.checkNull(hojaFrontalDTO.getInformacionPx());
+		GmjInformacionPacienteDTO infoPx = (GmjInformacionPacienteDTO) Validators.checkNull(hojaFrontalDTO.getInformacionPx());		
+		GmjDatosContactoPacienteDTO datosContactoPx = (GmjDatosContactoPacienteDTO) Validators.checkNull(hojaFrontalDTO.getDatosContacto());
+		GmjDomicilioPacienteDTO domicilioPx = (GmjDomicilioPacienteDTO) Validators.checkNull(hojaFrontalDTO.getDomicilioPaciente());
+		GmjHistoriaClinicaDTO historiaClinica = (GmjHistoriaClinicaDTO) Validators.checkNull(hojaFrontalDTO.getHistoriaClinica());
+		
 		validadoresApp.validarInfoPaciente(infoPx);
-		GmjDatosContactoPacienteDTO datosContactoPx = hojaFrontalDTO.getDatosContacto();
-		GmjDomicilioPacienteDTO domicilioPx = hojaFrontalDTO.getDomicilioPaciente();
-		GmjHistoriaClinicaDTO historiaClinica =hojaFrontalDTO.getHistoriaClinica();
+		validadoresApp.validarDomicilioPx(domicilioPx);
+		validadoresApp.validarHistoriaClinicaPx(historiaClinica);
+		validadoresApp.validarDatosContactoPx(datosContactoPx);
+		
 		List<PerPersona> personas = personaRepository.findAll();
 		
 		
