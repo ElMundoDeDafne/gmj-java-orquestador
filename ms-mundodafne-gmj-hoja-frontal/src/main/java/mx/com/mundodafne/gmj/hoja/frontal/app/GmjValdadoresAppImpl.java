@@ -20,8 +20,8 @@ public class GmjValdadoresAppImpl implements GmjValidadoresApp {
 	@Override
 	public void validarInfoPaciente(GmjInformacionPacienteDTO dto) throws BusinessException {
 		if(dto!=null) {
-			if(dto.getEdad()==0) {
-				
+			if(dto.getEdad()==null) {
+				throw new BusinessException("Faltan datos en hoja frontal.");
 			}
 		}
 	}

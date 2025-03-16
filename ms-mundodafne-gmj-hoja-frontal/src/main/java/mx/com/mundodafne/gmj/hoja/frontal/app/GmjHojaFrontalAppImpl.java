@@ -30,6 +30,7 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 	public GmjFrontalRespSalidaDTO registrarInfoBD(GmjHojaFrontalDTO hojaFrontalDTO) throws BusinessException {
 		GmjFrontalRespSalidaDTO salida = new GmjFrontalRespSalidaDTO();
 		String[] msgs = null;
+		List<String> mensajes = new ArrayList();
 		
 		GmjInformacionPacienteDTO infoPx = (GmjInformacionPacienteDTO) Validators.checkNull(hojaFrontalDTO.getInformacionPx());		
 		GmjDatosContactoPacienteDTO datosContactoPx = (GmjDatosContactoPacienteDTO) Validators.checkNull(hojaFrontalDTO.getDatosContacto());
@@ -43,21 +44,22 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 			validadoresApp.validarHistoriaClinicaPx(historiaClinica);
 			validadoresApp.validarDatosContactoPx(datosContactoPx);			
 		}
-		
+		salida.setExito(true);
+		salida.setMensajes(msgs);
 		List<PerPersona> personas = personaRepository.findAll();
 		PerPaciente pacienteNuevo = new PerPaciente();
 		PerPersona per = new PerPersona();
 		
-		per.setNombrePropio1("Juanito");
-		per.setApellidoMaterno("ApMat");
-		per.setApellidoPaterno("ApPat");
-		per.setGenero("M");
-		per.setOcupacion("ING. INFORMATICO");
-		pacienteNuevo.setMotivoConsulta("prueba");
-		pacienteNuevo.setPeso(70D);
-		pacienteNuevo.setPersona(per);
-		personaRepository.save(per);
-		pacienteRepository.save(pacienteNuevo);
+//		per.setNombrePropio1("Juanito");
+//		per.setApellidoMaterno("ApMat");
+//		per.setApellidoPaterno("ApPat");
+//		per.setGenero("M");
+//		per.setOcupacion("ING. INFORMATICO");
+//		pacienteNuevo.setMotivoConsulta("prueba");
+//		pacienteNuevo.setPeso(70D);
+//		pacienteNuevo.setPersona(per);
+//		personaRepository.save(per);
+//		pacienteRepository.save(pacienteNuevo);
 		List pacientes  = pacienteRepository.findAll();
 		
 		
