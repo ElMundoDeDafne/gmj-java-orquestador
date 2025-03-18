@@ -11,6 +11,7 @@ import mx.com.mundodafne.gmj.hoja.frontal.app.GmjHojaFrontalApp;
 import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjFrontalRespSalidaDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjHojaFrontalDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.exception.BusinessException;
+import mx.com.mundodafne.gmj.hoja.frontal.exception.NotFoundException;
 
 @RestController
 @RequestMapping("/api/frontal/v1.0")
@@ -19,7 +20,7 @@ public class GmjHojaFrontalController {
 	@Autowired private GmjHojaFrontalApp hojaFrontalApp;
 	
 	@PostMapping("/registro/get")
-	public GmjFrontalRespSalidaDTO registroHojaFrontal(@RequestBody GmjHojaFrontalDTO dto) throws BusinessException{
+	public GmjFrontalRespSalidaDTO registroHojaFrontal(@RequestBody GmjHojaFrontalDTO dto) throws BusinessException, NotFoundException{
 		return hojaFrontalApp.registrarInfoBD(dto);
 	}
 }

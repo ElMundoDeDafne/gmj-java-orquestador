@@ -15,6 +15,7 @@ import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjInformacionPacienteDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.entity.PerPaciente;
 import mx.com.mundodafne.gmj.hoja.frontal.entity.PerPersona;
 import mx.com.mundodafne.gmj.hoja.frontal.exception.BusinessException;
+import mx.com.mundodafne.gmj.hoja.frontal.exception.NotFoundException;
 import mx.com.mundodafne.gmj.hoja.frontal.repository.GmjPacienteRepository;
 import mx.com.mundodafne.gmj.hoja.frontal.repository.GmjPersonaRepository;
 import mx.com.mundodafne.gmj.hoja.frontal.utils.Validators;
@@ -27,7 +28,7 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 	@Autowired GmjPacienteRepository pacienteRepository;
 	
 	@Override
-	public GmjFrontalRespSalidaDTO registrarInfoBD(GmjHojaFrontalDTO hojaFrontalDTO) throws BusinessException {
+	public GmjFrontalRespSalidaDTO registrarInfoBD(GmjHojaFrontalDTO hojaFrontalDTO) throws BusinessException, NotFoundException {
 		GmjFrontalRespSalidaDTO salida = new GmjFrontalRespSalidaDTO();
 		String[] msgs = null;
 		List<String> mensajes = new ArrayList();
@@ -61,6 +62,9 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 //		personaRepository.save(per);
 //		pacienteRepository.save(pacienteNuevo);
 		List pacientes  = pacienteRepository.findAll();
+		if(pacientes != null && pacientes.isEmpty()) {
+			throw new NotFoundException("Sin resultados.");
+		}
 		
 		
 //		GmjPersona nuevaPersona = new GmjPersona();

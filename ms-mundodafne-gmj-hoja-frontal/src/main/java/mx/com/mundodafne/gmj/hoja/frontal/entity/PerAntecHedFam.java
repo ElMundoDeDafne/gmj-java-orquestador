@@ -10,11 +10,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "PER_ANTEC_HEDFAM")
+//@Entity
+//@Table(name = "PER_ANTEC_HEDFAM")
 public class PerAntecHedFam {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAntecHedFam;
 	
 //	@OneToMany(mappedBy = "ID_MORBILIDAD", cascade = CascadeType.ALL, orphanRemoval = true)

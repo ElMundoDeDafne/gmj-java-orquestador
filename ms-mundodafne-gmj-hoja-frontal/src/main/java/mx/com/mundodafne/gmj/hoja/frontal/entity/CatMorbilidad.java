@@ -8,16 +8,16 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "CAT_MORBILIDAD")
+//@Entity
+//@Table(name = "CAT_MORBILIDAD")
 public class CatMorbilidad {
 	
 	//org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' 
 	//defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: 
 	//Table [cat_morbilidad] contains physical column name [id_morbilidad] referred to by multiple logical column names: [ID_MORBILIDAD], [idMorbilidad]
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idMorbilidad;
 	private String descMorbilidad;
 	private String claveMorbilidad;
