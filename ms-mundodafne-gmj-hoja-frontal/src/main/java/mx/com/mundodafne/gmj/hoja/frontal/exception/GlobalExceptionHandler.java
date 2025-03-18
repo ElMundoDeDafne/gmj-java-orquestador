@@ -18,12 +18,19 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<>(hmResp,HttpStatus.BAD_REQUEST);
 	}
 	
+	@ExceptionHandler(NotFoundException.class)
+	public ResponseEntity<Map<String,Object>> errorNotFound(NotFoundException ex) {
+		Map<String,Object> hmResp = new HashMap();
+		hmResp.put("error", ex.getMessage());
+		return new ResponseEntity<>(hmResp,HttpStatus.NOT_FOUND);
+	}
+	
 	//Error desconocido.
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<Map<String,Object>> error(Exception ex) {
 		Map<String,Object> hmResp = new HashMap();
 		hmResp.put("error", ex.getMessage());
-		return new ResponseEntity<>(hmResp,HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(hmResp,HttpStatus.INTERNAL_SERVER_ERROR);
 	}	
 	
 }
