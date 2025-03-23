@@ -38,7 +38,7 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 		GmjDomicilioPacienteDTO domicilioPx = (GmjDomicilioPacienteDTO) Validators.checkNull(hojaFrontalDTO.getDomicilioPaciente());
 		GmjHistoriaClinicaDTO historiaClinica = (GmjHistoriaClinicaDTO) Validators.checkNull(hojaFrontalDTO.getHistoriaClinica());
 		
-		boolean testValidators = false;
+		boolean testValidators = true;
 		if(testValidators) {
 			validadoresApp.validarInfoPaciente(infoPx);
 			validadoresApp.validarDomicilioPx(domicilioPx);
@@ -62,7 +62,8 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 //		personaRepository.save(per);
 //		pacienteRepository.save(pacienteNuevo);
 		List pacientes  = pacienteRepository.findAll();
-		if(pacientes != null && pacientes.isEmpty()) {
+//		List pacientes  = new ArrayList();
+		if(pacientes == null || pacientes.isEmpty()) {
 			throw new NotFoundException("Sin resultados.");
 		}
 		

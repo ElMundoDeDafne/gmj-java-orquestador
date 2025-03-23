@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
 	
 	@ExceptionHandler(BusinessException.class)
 	public ResponseEntity<Map<String,Object>> errorNegocio(BusinessException ex) {
-		Map<String,Object> hmResp = new HashMap();
+ 		Map<String,Object> hmResp = new HashMap();
 		hmResp.put("error", ex.getMessage());
 		return new ResponseEntity<>(hmResp,HttpStatus.BAD_REQUEST);
 	}
