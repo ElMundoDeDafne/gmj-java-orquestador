@@ -1,0 +1,46 @@
+package mx.com.mundodafne.ms.catalogos.gmj.entity;
+
+public class CatNacionalidad {
+
+	private Long idNacionalidad;
+	private String codigo;
+	private String descripcion;
+	/**
+	 * @return the idNacionalidad
+	 */
+	public Long getIdNacionalidad() {
+		return idNacionalidad;
+	}
+	/**
+	 * @param idNacionalidad the idNacionalidad to set
+	 */
+	public void setIdNacionalidad(Long idNacionalidad) {
+		this.idNacionalidad = idNacionalidad;
+	}
+	/**
+	 * @return the codigo
+	 */
+	public String getCodigo() {
+		return codigo;
+	}
+	/**
+	 * @param codigo the codigo to set
+	 */
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+	/**
+	 * @return the descripcion
+	 */
+	public String getDescripcion() {
+		return descripcion;
+	}
+	/**
+	 * @param descripcion the descripcion to set
+	 */
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	
+}
