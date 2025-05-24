@@ -9,7 +9,6 @@ import mx.com.mundodafne.ms.pacientes.gmj.dto.GmjPacientesPacienteDTO;
 public class GmjPacientesAltaPacienteAppImpl implements GmjPacientesAltaPacienteApp{
 
 	@Override
-	@PostMapping(path = "/paciente/registrar/")
 	public void registrarPaciente(GmjPacientesPacienteDTO pacienteDTO) {
 		// TODO Auto-generated method stub
 		
