@@ -13,9 +13,9 @@ public class GmjBusquedaPacientesInDTO implements Serializable {
 	private String nombre;
 	private String localidad;
 	private String curp;
-	private Byte edad;
 	private String especialidad;
 	private String medicoTratante;
+	
 	/**
 	 * @return the exito
 	 */
@@ -75,18 +75,6 @@ public class GmjBusquedaPacientesInDTO implements Serializable {
 	 */
 	public void setCurp(String curp) {
 		this.curp = curp;
-	}
-	/**
-	 * @return the edad
-	 */
-	public Byte getEdad() {
-		return edad;
-	}
-	/**
-	 * @param edad the edad to set
-	 */
-	public void setEdad(Byte edad) {
-		this.edad = edad;
 	}
 	/**
 	 * @return the especialidad
