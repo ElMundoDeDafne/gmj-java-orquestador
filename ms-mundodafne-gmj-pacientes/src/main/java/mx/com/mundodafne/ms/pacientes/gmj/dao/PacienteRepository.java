@@ -9,8 +9,8 @@ import org.springframework.data.repository.query.Param;
 import mx.com.mundodafne.ms.pacientes.gmj.dto.GmjBusquedaPacientesOutDTO;
 import mx.com.mundodafne.ms.pacientes.gmj.entity.PerPacienteEntity;
 
-public interface PacienteRepository extends CrudRepository<PerPacienteEntity, Long>{
-	
+//public interface PacienteRepository extends CrudRepository<PerPacienteEntity, Long>{
+public interface PacienteRepository{
 	@Query(value="SELECT ",nativeQuery = true)
 	List<GmjBusquedaPacientesOutDTO> buscarPacientesPorFiltro (@Param("filtro") Object filtro);
 }

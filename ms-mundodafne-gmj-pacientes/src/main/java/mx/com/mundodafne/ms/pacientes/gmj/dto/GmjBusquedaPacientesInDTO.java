@@ -8,7 +8,6 @@ import java.io.Serializable;
  * */
 public class GmjBusquedaPacientesInDTO implements Serializable {
 	
-	private boolean exito;
 	private String folio;
 	private String nombre;
 	private String localidad;
@@ -16,18 +15,6 @@ public class GmjBusquedaPacientesInDTO implements Serializable {
 	private String especialidad;
 	private String medicoTratante;
 	
-	/**
-	 * @return the exito
-	 */
-	public boolean isExito() {
-		return exito;
-	}
-	/**
-	 * @param exito the exito to set
-	 */
-	public void setExito(boolean exito) {
-		this.exito = exito;
-	}
 	/**
 	 * @return the folio
 	 */

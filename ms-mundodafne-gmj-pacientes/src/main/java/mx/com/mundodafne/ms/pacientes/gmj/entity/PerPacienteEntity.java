@@ -2,6 +2,11 @@ package mx.com.mundodafne.ms.pacientes.gmj.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+//@Entity
+//@Table(name = "PER_PACIENTE")
 public class PerPacienteEntity {
 	private Long idPaciente;
 	private String motivoConsulta;

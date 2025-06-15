@@ -1,5 +1,6 @@
 package mx.com.mundodafne.ms.pacientes.gmj.app;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -18,9 +19,17 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 		if(in.getCurp() == null || in.getCurp().isEmpty()) {
 			throw new BusinessException("CURP del paciente vacia.");
 		}
-		
-		
-		
+		try {
+			row = new GmjBusquedaPacientesOutDTO();
+			row.setNombres("CHRISTIAN YAMIL");
+			row.setApellidoPaterno("CASTILLO");
+			row.setCurp("CACC910212A50");
+			row.setLocalidad("JACALA");
+		} catch(Exception e) {
+			throw new BusinessException(e.getMessage());
+		}
+		out = new ArrayList();
+		out.add(row);
 		return out;
 	}
 
