@@ -19,6 +19,8 @@ public class GmjBusquedaPacientesOutDTO implements Serializable {
 	private String pathSistema;
 	private String medicoTratante;
 	private LocalDateTime fechaUltimaVisita;
+	private String folio;
+	private long idPaciente;
 	
 	/**
 	 * @return the nombres
@@ -151,6 +153,30 @@ public class GmjBusquedaPacientesOutDTO implements Serializable {
 	 */
 	public void setFechaUltimaVisita(LocalDateTime fechaUltimaVisita) {
 		this.fechaUltimaVisita = fechaUltimaVisita;
+	}
+	/**
+	 * @return the folio
+	 */
+	public String getFolio() {
+		return folio;
+	}
+	/**
+	 * @param folio the folio to set
+	 */
+	public void setFolio(String folio) {
+		this.folio = folio;
+	}
+	/**
+	 * @return the idPaciente
+	 */
+	public long getIdPaciente() {
+		return idPaciente;
+	}
+	/**
+	 * @param idPaciente the idPaciente to set
+	 */
+	public void setIdPaciente(long idPaciente) {
+		this.idPaciente = idPaciente;
 	}
 
 	

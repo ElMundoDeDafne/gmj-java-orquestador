@@ -14,6 +14,7 @@ public class GmjBusquedaPacientesInDTO implements Serializable {
 	private String curp;
 	private String especialidad;
 	private String medicoTratante;
+	private String tipoBusqueda;
 	
 	/**
 	 * @return the folio
@@ -86,6 +87,18 @@ public class GmjBusquedaPacientesInDTO implements Serializable {
 	 */
 	public void setMedicoTratante(String medicoTratante) {
 		this.medicoTratante = medicoTratante;
+	}
+	/**
+	 * @return the tipoBusqueda
+	 */
+	public String getTipoBusqueda() {
+		return tipoBusqueda;
+	}
+	/**
+	 * @param tipoBusqueda the tipoBusqueda to set
+	 */
+	public void setTipoBusqueda(String tipoBusqueda) {
+		this.tipoBusqueda = tipoBusqueda;
 	}
 	
 }
