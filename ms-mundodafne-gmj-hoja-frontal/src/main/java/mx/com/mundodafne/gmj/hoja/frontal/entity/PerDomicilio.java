@@ -1,16 +1,18 @@
 package mx.com.mundodafne.gmj.hoja.frontal.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-//@Entity
-//@Table(name = "PER_DOMICILIO")
-public class GmjDomicilio {
-//	@Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Entity
+@Table(name = "PER_DOMICILIO")
+public class PerDomicilio {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_DOMICILIO")
 	private Long idDomicilioPersona;
 	private String codigoPostal;
 	private String callePrincipal;

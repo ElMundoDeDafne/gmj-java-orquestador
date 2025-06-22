@@ -18,6 +18,7 @@ public class GmjInformacionPacienteDTO implements java.io.Serializable {
 	private String ocupacion;
 	private String derechoHabiencia;
 	private String nss;
+	private String genero;
 	/**
 	 * @return the esDerechoHabiente
 	 */
@@ -221,6 +222,18 @@ public class GmjInformacionPacienteDTO implements java.io.Serializable {
 	 */
 	public void setNss(String nss) {
 		this.nss = nss;
+	}
+	/**
+	 * @return the genero
+	 */
+	public String getGenero() {
+		return genero;
+	}
+	/**
+	 * @param genero the genero to set
+	 */
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 	
 	

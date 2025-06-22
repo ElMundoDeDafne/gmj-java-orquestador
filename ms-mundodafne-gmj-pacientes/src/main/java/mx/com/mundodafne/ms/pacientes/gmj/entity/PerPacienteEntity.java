@@ -2,23 +2,37 @@ package mx.com.mundodafne.ms.pacientes.gmj.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-//@Entity
-//@Table(name = "PER_PACIENTE")
+@Entity
+@Table(name = "PER_PACIENTE")
 public class PerPacienteEntity {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_PACIENTE")
 	private Long idPaciente;
 	private String motivoConsulta;
 	private LocalDateTime fechaIngreso;
 	private LocalDateTime fechaAlta;
-//	private PerPersonaEntity perPersona;
-	private double peso;
-	private double imc;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ID_PERSONA", referencedColumnName = "ID_PERSONA")
+	private PerPersonaEntity perPersona;
+	private Double peso;
+	private Double imc;
 //	private PerHistorialClinicoEntity perHistorialClinico;
 	private String pathSistema;
 	private String folio;
+	@Column(name = "PROXIMA_CITA")
 	private LocalDateTime fechaProximaCita;
+	@Column(name = "ULTIMA_VISITA")
 	private LocalDateTime fechaUltimaVisita;
 	/**
 	 * @return the idPaciente
@@ -77,7 +91,7 @@ public class PerPacienteEntity {
 	/**
 	 * @param peso the peso to set
 	 */
-	public void setPeso(double peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
 	/**
@@ -89,7 +103,7 @@ public class PerPacienteEntity {
 	/**
 	 * @param imc the imc to set
 	 */
-	public void setImc(double imc) {
+	public void setImc(Double imc) {
 		this.imc = imc;
 	}
 	/**
@@ -139,6 +153,18 @@ public class PerPacienteEntity {
 	 */
 	public void setFechaUltimaVisita(LocalDateTime fechaUltimaVisita) {
 		this.fechaUltimaVisita = fechaUltimaVisita;
+	}
+	/**
+	 * @return the perPersona
+	 */
+	public PerPersonaEntity getPerPersona() {
+		return perPersona;
+	}
+	/**
+	 * @param perPersona the perPersona to set
+	 */
+	public void setPerPersona(PerPersonaEntity perPersona) {
+		this.perPersona = perPersona;
 	}
 	
 	

@@ -26,6 +26,7 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 	@Autowired GmjPersonaRepository personaRepository;
 	@Autowired GmjValdadoresAppImpl validadoresApp;
 	@Autowired GmjPacienteRepository pacienteRepository;
+	@Autowired GmjRegistrarPacientesAppImpl registrarPacienteApp;
 	
 	@Override
 	public GmjFrontalRespSalidaDTO registrarInfoBD(GmjHojaFrontalDTO hojaFrontalDTO) throws BusinessException, NotFoundException {
@@ -44,6 +45,9 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 			validadoresApp.validarDomicilioPx(domicilioPx);
 			validadoresApp.validarHistoriaClinicaPx(historiaClinica);
 			validadoresApp.validarDatosContactoPx(datosContactoPx);			
+		}
+		if(registrarPacienteApp.registroPaciente(hojaFrontalDTO)) {
+			
 		}
 		salida.setExito(true);
 		salida.setMensajes(msgs);

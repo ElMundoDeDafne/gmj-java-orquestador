@@ -43,7 +43,11 @@ public class PerPersona {
 	private LocalDateTime fechaRegistro;
 	@Column(name = "FECHA_BAJA")
 	private LocalDateTime fechaBaja;
-
+	
+	//1 persona tiene 1 domicilio
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ID_DOMICILIO", referencedColumnName = "ID_DOMICILIO")
+	private PerDomicilio domicilio;
 	/**
 	 * @return the idPersona
 	 */
@@ -187,6 +191,18 @@ public class PerPersona {
 	 */
 	public void setFechaBaja(LocalDateTime fechaBaja) {
 		this.fechaBaja = fechaBaja;
+	}
+	/**
+	 * @return the domicilio
+	 */
+	public PerDomicilio getDomicilio() {
+		return domicilio;
+	}
+	/**
+	 * @param domicilio the domicilio to set
+	 */
+	public void setDomicilio(PerDomicilio domicilio) {
+		this.domicilio = domicilio;
 	}
 
 	

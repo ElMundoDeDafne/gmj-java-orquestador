@@ -4,15 +4,21 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import mx.com.mundodafne.ms.pacientes.gmj.dao.PacienteRepository;
 import mx.com.mundodafne.ms.pacientes.gmj.dto.GmjBusquedaPacientesInDTO;
 import mx.com.mundodafne.ms.pacientes.gmj.dto.GmjBusquedaPacientesOutDTO;
+import mx.com.mundodafne.ms.pacientes.gmj.entity.PerPacienteEntity;
+import mx.com.mundodafne.ms.pacientes.gmj.entity.PerPersonaEntity;
 import mx.com.mundodafne.ms.pacientes.gmj.exception.BusinessException;
 
 @Service
 public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesApp {
 
+	@Autowired PacienteRepository pacienteRepo; 
+	
 	@Override
 	public List<GmjBusquedaPacientesOutDTO> busquedaPacientesFiltro(GmjBusquedaPacientesInDTO in) throws BusinessException {
 		List<GmjBusquedaPacientesOutDTO> out = null;
@@ -20,9 +26,9 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 		String tipoBusqueda = in.getTipoBusqueda(); 
 		if(tipoBusqueda.equalsIgnoreCase("folio" )) {
 			String regex = "\\d{10}-\\d";
-			if (!tipoBusqueda.matches(regex)) {
-				throw new BusinessException("Ingresar folios validos");
-			}
+//			if (!tipoBusqueda.matches(regex)) {
+//				throw new BusinessException("Ingresar folios validos");
+//			}
 		}
 		
 //		if(in.getCurp() == null || in.getCurp().isEmpty()) {
@@ -30,6 +36,20 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 //		}
 		try {
 			out = new ArrayList();
+			List<PerPacienteEntity> res = (List) pacienteRepo.findAll();
+			PerPersonaEntity persona;
+			
+			for (PerPacienteEntity perPacienteEntity : res) {
+				row = new GmjBusquedaPacientesOutDTO();
+				persona = perPacienteEntity.getPerPersona();
+				row.setNombres(persona.getNombrePropio1()+" "+persona.getNombrePropio2());
+				row.setIdPaciente(persona.getIdPersona());
+				row.setApellidoMaterno(persona.getApellidoMaterno());
+				row.setApellidoPaterno(persona.getApellidoPaterno());
+				row.setCurp(persona.getCurp());
+				row.setFolio(perPacienteEntity.getFolio());
+				out.add(row);
+			}
 			for(int i = 0; i < 10 ; i++) {
 				row = new GmjBusquedaPacientesOutDTO();
 				row.setNombres("CHRISTIAN YAMIL");
