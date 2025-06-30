@@ -12,6 +12,6 @@ import mx.com.mundodafne.ms.pacientes.gmj.entity.PerPacienteEntity;
 
 //public interface PacienteRepository extends CrudRepository<PerPacienteEntity, Long>{
 public interface PacienteRepository extends JpaRepository<PerPacienteEntity, Long>{
-	@Query(value="SELECT ",nativeQuery = true)
-	List<GmjBusquedaPacientesOutDTO> buscarPacientesPorFiltro (@Param("filtro") Object filtro);
+	@Query(value="SELECT * FROM PER_PACIENTE WHERE FOLIO LIKE %:filtro%",nativeQuery = true)
+	List<PerPacienteEntity> buscarPacientesPorFolio (@Param("filtro") String filtro);
 }

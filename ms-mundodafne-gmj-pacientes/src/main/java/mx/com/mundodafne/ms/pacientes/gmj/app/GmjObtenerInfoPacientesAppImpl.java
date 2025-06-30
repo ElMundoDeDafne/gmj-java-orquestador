@@ -23,9 +23,30 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 	public List<GmjBusquedaPacientesOutDTO> busquedaPacientesFiltro(GmjBusquedaPacientesInDTO in) throws BusinessException {
 		List<GmjBusquedaPacientesOutDTO> out = null;
 		GmjBusquedaPacientesOutDTO row;
-		String tipoBusqueda = in.getTipoBusqueda(); 
+		String tipoBusqueda = in.getTipoBusqueda();
+		List<PerPacienteEntity> resultados = null;
 		if(tipoBusqueda.equalsIgnoreCase("folio" )) {
+			out = new ArrayList();
 			String regex = "\\d{10}-\\d";
+			resultados = pacienteRepo.buscarPacientesPorFolio(in.getFolio());
+			PerPersonaEntity persona;
+			PerPacienteEntity paciente;
+			for (PerPacienteEntity perPacienteEntity : resultados) {
+				row = new GmjBusquedaPacientesOutDTO();
+				persona = perPacienteEntity.getPerPersona();
+				row.setNombres(persona.getNombrePropio1()+" "+persona.getNombrePropio2());
+				row.setIdPaciente(persona.getIdPersona());
+				row.setApellidoMaterno(persona.getApellidoMaterno());
+				row.setApellidoPaterno(persona.getApellidoPaterno());
+				row.setCurp(persona.getCurp());
+				row.setFolio(perPacienteEntity.getFolio());
+				row.setLocalidad(persona.getDomicilio().getLocalidad());
+				Byte edad = Byte.valueOf(persona.getEdad().toString());
+				row.setEdad(edad);
+				out.add(row);
+			}
+			return out;
+			
 //			if (!tipoBusqueda.matches(regex)) {
 //				throw new BusinessException("Ingresar folios validos");
 //			}
@@ -48,21 +69,6 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 				row.setApellidoPaterno(persona.getApellidoPaterno());
 				row.setCurp(persona.getCurp());
 				row.setFolio(perPacienteEntity.getFolio());
-				out.add(row);
-			}
-			for(int i = 0; i < 10 ; i++) {
-				row = new GmjBusquedaPacientesOutDTO();
-				row.setNombres("CHRISTIAN YAMIL");
-				row.setApellidoPaterno("CASTILLO");
-				row.setCurp("CACC910212A50");
-				row.setLocalidad("JACALA");
-				row.setApellidoMaterno("COVARRUBIAS");
-				row.setEdad((byte)31);
-				row.setEspecialidad("NEUROLOGIA");
-				row.setMedicoTratante("GERARDO A. BORBOLLA");
-				row.setFechaUltimaVisita(LocalDateTime.now());
-				row.setFolio("33654-1");
-				row.setIdPaciente(11L);				
 				out.add(row);
 			}
 		} catch(Exception e) {
