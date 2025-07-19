@@ -31,9 +31,5 @@ public class GmjPacientesPacienteController {
 	public List<GmjBusquedaPacientesOutDTO> busquedaPacientesPorFiltro(@RequestBody GmjBusquedaPacientesInDTO in) throws BusinessException {
 		return obtenerInfoPacientesApp.busquedaPacientesFiltro(in);
 		
-	}
-	
-	
-	
-	
+	}	
 }//ve por mi mama siiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii

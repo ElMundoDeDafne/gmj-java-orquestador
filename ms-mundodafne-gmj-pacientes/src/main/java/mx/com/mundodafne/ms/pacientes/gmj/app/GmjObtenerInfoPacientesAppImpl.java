@@ -25,6 +25,11 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 		GmjBusquedaPacientesOutDTO row;
 		String tipoBusqueda = in.getTipoBusqueda();
 		List<PerPacienteEntity> resultados = null;
+		if("nombre".equalsIgnoreCase(tipoBusqueda)) {
+			resultados = pacienteRepo.buscarPacientesPorNombre(in.getNombre());
+			
+		}
+		
 		if(tipoBusqueda.equalsIgnoreCase("folio" )) {
 			out = new ArrayList();
 			String regex = "\\d{10}-\\d";
@@ -44,6 +49,10 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 				Byte edad = Byte.valueOf(persona.getEdad().toString());
 				row.setEdad(edad);
 				out.add(row);
+			}
+			
+			if(resultados == null || resultados.isEmpty() ) {
+				throw new BusinessException("No se encontraron resultados");
 			}
 			return out;
 			
