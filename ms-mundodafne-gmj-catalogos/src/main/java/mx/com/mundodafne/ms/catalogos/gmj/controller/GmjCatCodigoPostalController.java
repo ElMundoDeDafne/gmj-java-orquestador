@@ -1,5 +1,6 @@
 package mx.com.mundodafne.ms.catalogos.gmj.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,11 @@ public class GmjCatCodigoPostalController {
 	
 	@PostMapping("/cp/get")
 	public void obtenerDomicilio() {
+		
+	}
+	
+	@GetMapping("/profesiones/get")
+	public void obtenerProfesiones() {
 		
 	}
 }

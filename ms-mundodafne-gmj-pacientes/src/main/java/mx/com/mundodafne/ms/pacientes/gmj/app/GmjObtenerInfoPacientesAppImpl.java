@@ -2,6 +2,7 @@ package mx.com.mundodafne.ms.pacientes.gmj.app;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,72 +18,47 @@ import mx.com.mundodafne.ms.pacientes.gmj.exception.BusinessException;
 @Service
 public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesApp {
 
-	@Autowired PacienteRepository pacienteRepo; 
+	@Autowired PacienteRepository pacienteRepo;
+	
+	private List<GmjBusquedaPacientesOutDTO> obtenerResultados(List<PerPacienteEntity> resultados){
+		List<GmjBusquedaPacientesOutDTO> res = new ArrayList();
+		PerPersonaEntity persona;
+		PerPacienteEntity paciente;
+		GmjBusquedaPacientesOutDTO row;
+		Iterator itRes = resultados.iterator();
+		while(itRes.hasNext()) {
+			row = new GmjBusquedaPacientesOutDTO();
+			paciente = (PerPacienteEntity) itRes.next();
+			persona = paciente.getPerPersona();
+			row.setNombres(persona.getNombrePropio1()+" "+persona.getNombrePropio2());
+			row.setIdPaciente(persona.getIdPersona());
+			row.setApellidoMaterno(persona.getApellidoMaterno());
+			row.setApellidoPaterno(persona.getApellidoPaterno());
+			row.setCurp(persona.getCurp());
+			row.setFolio(paciente.getFolio());
+			row.setLocalidad(persona.getDomicilio().getLocalidad());
+			Byte edad = Byte.valueOf(persona.getEdad().toString());
+			row.setEdad(edad);
+			res.add(row);
+		}
+		return res;
+	} 
 	
 	@Override
 	public List<GmjBusquedaPacientesOutDTO> busquedaPacientesFiltro(GmjBusquedaPacientesInDTO in) throws BusinessException {
-		List<GmjBusquedaPacientesOutDTO> out = null;
-		GmjBusquedaPacientesOutDTO row;
+		List<GmjBusquedaPacientesOutDTO> out = null;		
 		String tipoBusqueda = in.getTipoBusqueda();
 		List<PerPacienteEntity> resultados = null;
-		if("nombre".equalsIgnoreCase(tipoBusqueda)) {
+		if("nombreS".equalsIgnoreCase(tipoBusqueda)) {
 			resultados = pacienteRepo.buscarPacientesPorNombre(in.getNombre());
-			
+			out = obtenerResultados(resultados);
 		}
 		
-		if(tipoBusqueda.equalsIgnoreCase("folio" )) {
-			out = new ArrayList();
-			String regex = "\\d{10}-\\d";
+		if("folio".equalsIgnoreCase(tipoBusqueda)) {
 			resultados = pacienteRepo.buscarPacientesPorFolio(in.getFolio());
-			PerPersonaEntity persona;
-			PerPacienteEntity paciente;
-			for (PerPacienteEntity perPacienteEntity : resultados) {
-				row = new GmjBusquedaPacientesOutDTO();
-				persona = perPacienteEntity.getPerPersona();
-				row.setNombres(persona.getNombrePropio1()+" "+persona.getNombrePropio2());
-				row.setIdPaciente(persona.getIdPersona());
-				row.setApellidoMaterno(persona.getApellidoMaterno());
-				row.setApellidoPaterno(persona.getApellidoPaterno());
-				row.setCurp(persona.getCurp());
-				row.setFolio(perPacienteEntity.getFolio());
-				row.setLocalidad(persona.getDomicilio().getLocalidad());
-				Byte edad = Byte.valueOf(persona.getEdad().toString());
-				row.setEdad(edad);
-				out.add(row);
-			}
-			
-			if(resultados == null || resultados.isEmpty() ) {
-				throw new BusinessException("No se encontraron resultados");
-			}
-			return out;
-			
-//			if (!tipoBusqueda.matches(regex)) {
-//				throw new BusinessException("Ingresar folios validos");
-//			}
+			out = obtenerResultados(resultados);
 		}
 		
-//		if(in.getCurp() == null || in.getCurp().isEmpty()) {
-//			throw new BusinessException("CURP del paciente vacia.");
-//		}
-		try {
-			out = new ArrayList();
-			List<PerPacienteEntity> res = (List) pacienteRepo.findAll();
-			PerPersonaEntity persona;
-			
-			for (PerPacienteEntity perPacienteEntity : res) {
-				row = new GmjBusquedaPacientesOutDTO();
-				persona = perPacienteEntity.getPerPersona();
-				row.setNombres(persona.getNombrePropio1()+" "+persona.getNombrePropio2());
-				row.setIdPaciente(persona.getIdPersona());
-				row.setApellidoMaterno(persona.getApellidoMaterno());
-				row.setApellidoPaterno(persona.getApellidoPaterno());
-				row.setCurp(persona.getCurp());
-				row.setFolio(perPacienteEntity.getFolio());
-				out.add(row);
-			}
-		} catch(Exception e) {
-			throw new BusinessException(e.getMessage());
-		}
 		return out;
 	}
 
