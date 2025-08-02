@@ -37,6 +37,9 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 			row.setCurp(persona.getCurp());
 			row.setFolio(paciente.getFolio());
 			row.setLocalidad(persona.getDomicilio().getLocalidad());
+			row.setFechaUltimaVisita(paciente.getFechaUltimaVisita());
+			row.setEspecialidad("ESP. EJEMPLO");
+			row.setMedicoTratante("DR. FULANITO");
 			Byte edad = Byte.valueOf(persona.getEdad().toString());
 			row.setEdad(edad);
 			res.add(row);
@@ -49,7 +52,7 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 		List<GmjBusquedaPacientesOutDTO> out = null;		
 		String tipoBusqueda = in.getTipoBusqueda();
 		List<PerPacienteEntity> resultados = null;
-		if("nombreS".equalsIgnoreCase(tipoBusqueda)) {
+		if("nombres".equalsIgnoreCase(tipoBusqueda)) {
 			resultados = pacienteRepo.buscarPacientesPorNombre(in.getNombre());
 			out = obtenerResultados(resultados);
 		}
