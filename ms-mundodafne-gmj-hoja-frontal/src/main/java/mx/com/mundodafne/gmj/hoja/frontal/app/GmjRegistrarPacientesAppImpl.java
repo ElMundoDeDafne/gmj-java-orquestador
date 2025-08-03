@@ -82,11 +82,14 @@ mx.com.mundodafne.gmj.hoja.frontal.dto.GmjInformacionPacienteDTO@30e1dd06
 			domiRepository.save(domicilioPersona);
 			personaRepository.save(persona);
 			persona.setDomicilio(domicilioPersona);
-			datosContactoPersona.setPersona(persona);
-			datosContactoPersona.setCodigoIdentificador("EMA");
-			datosContactoPersona.setIdentificador(datosContactoPaciente.getCorreoElectronico());
-			datosContactoPersona.setFechaRegistro(LocalDateTime.now());
-			contactoRepository.save(datosContactoPersona);
+			//registramos email
+			if(!datosContactoPaciente.getCorreoElectronico().isBlank() || !datosContactoPaciente.getCorreoElectronico().isEmpty()) {
+				datosContactoPersona.setPersona(persona);
+				datosContactoPersona.setCodigoIdentificador("EMA");
+				datosContactoPersona.setIdentificador(datosContactoPaciente.getCorreoElectronico());
+				datosContactoPersona.setFechaRegistro(LocalDateTime.now());
+				contactoRepository.save(datosContactoPersona);	
+			}
 			if(!datosContactoPaciente.getNumeroTelefonico().isBlank() || !datosContactoPaciente.getNumeroTelefonico().isEmpty()) {
 				datosContactoPersona = new PerDatosContacto();
 				datosContactoPersona.setPersona(persona);
@@ -105,7 +108,7 @@ mx.com.mundodafne.gmj.hoja.frontal.dto.GmjInformacionPacienteDTO@30e1dd06
 			paciente.setFechaAlta(null);
 			paciente.setMotivoConsulta(infoPaciente.getMotivoConsulta());
 			paciente.setPathSistema("expedientes/paciente/"+persona.getIdPersona()+"/");
-			paciente.setPeso(89.5D);
+			paciente.setPeso(9.5D);
 			pacienteRepository.save(paciente);
 			//registro exitoso
 			exito = true;

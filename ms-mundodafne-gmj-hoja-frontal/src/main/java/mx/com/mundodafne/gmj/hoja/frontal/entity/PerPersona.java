@@ -48,6 +48,10 @@ public class PerPersona {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID_DOMICILIO", referencedColumnName = "ID_DOMICILIO")
 	private PerDomicilio domicilio;
+	
+    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL)
+	private PerPaciente perPaciente;
+	
 	/**
 	 * @return the idPersona
 	 */

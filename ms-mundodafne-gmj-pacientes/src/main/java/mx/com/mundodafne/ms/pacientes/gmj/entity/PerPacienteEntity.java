@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -22,8 +23,9 @@ public class PerPacienteEntity {
 	private String motivoConsulta;
 	private LocalDateTime fechaIngreso;
 	private LocalDateTime fechaAlta;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ID_PERSONA", referencedColumnName = "ID_PERSONA")
+    @OneToOne
+    @MapsId // <-- CLAVE: indica que esta entidad comparte la PK con persona
+    @JoinColumn(name = "id_paciente") // columna FK que también es PK
 	private PerPersonaEntity perPersona;
 	private Double peso;
 	private Double imc;

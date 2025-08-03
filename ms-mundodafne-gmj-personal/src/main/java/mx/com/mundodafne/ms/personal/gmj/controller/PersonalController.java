@@ -15,4 +15,8 @@ public class PersonalController {
 	public List obtenerPersonal() throws Exception{
 		return new ArrayList();
 	}
+	
+	public void registrarPersonal() {
+		
+	}
 }
