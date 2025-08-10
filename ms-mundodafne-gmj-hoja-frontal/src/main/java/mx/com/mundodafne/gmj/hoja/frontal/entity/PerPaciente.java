@@ -30,6 +30,8 @@ public class PerPaciente {
 	private String pathSistema;
 	private String folio;
 	private LocalDateTime proximaCita;
+	private LocalDateTime ultimaVisita;
+	//Falta agregar especialidad, antecedentes familaires, grupo sanguineo
 	
 	/**
 	 * 
@@ -203,4 +205,14 @@ public class PerPaciente {
 	public void setPersona(PerPersona persona) {
 		this.persona = persona;
 	}
+
+	public LocalDateTime getUltimaVisita() {
+		return ultimaVisita;
+	}
+
+	public void setUltimaVisita(LocalDateTime ultimaVisita) {
+		this.ultimaVisita = ultimaVisita;
+	}
+	
+	
 }

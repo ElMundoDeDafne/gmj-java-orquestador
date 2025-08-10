@@ -16,6 +16,7 @@ public class PersonalController {
 		return new ArrayList();
 	}
 	
+	@PostMapping("/post")
 	public void registrarPersonal() {
 		
 	}

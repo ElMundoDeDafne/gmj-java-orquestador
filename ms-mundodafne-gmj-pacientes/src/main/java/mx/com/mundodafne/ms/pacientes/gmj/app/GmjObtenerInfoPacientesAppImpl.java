@@ -53,6 +53,7 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 		String tipoBusqueda = in.getTipoBusqueda();
 		List<PerPacienteEntity> resultados = null;
 		if("nombres".equalsIgnoreCase(tipoBusqueda)) {
+			
 			resultados = pacienteRepo.buscarPacientesPorNombre(in.getNombre());
 			out = obtenerResultados(resultados);
 		}
@@ -60,6 +61,10 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 		if("folio".equalsIgnoreCase(tipoBusqueda)) {
 			resultados = pacienteRepo.buscarPacientesPorFolio(in.getFolio());
 			out = obtenerResultados(resultados);
+		}
+		
+		if(out.isEmpty()){
+			throw new BusinessException("No se encontraron resultados");
 		}
 		
 		return out;
