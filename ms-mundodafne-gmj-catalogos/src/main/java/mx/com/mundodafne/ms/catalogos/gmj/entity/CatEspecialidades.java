@@ -1,9 +1,21 @@
 package mx.com.mundodafne.ms.catalogos.gmj.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "CAT_ESPECIALIDADES")
 public class CatEspecialidades {
-	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idEspecialidad;
+	@Column(name = "CODIGO")
 	private String codigo;
+	@Column(name = "NOMBRE")
 	private String nombre;
 	/**
 	 * @return the idEspecialidad
