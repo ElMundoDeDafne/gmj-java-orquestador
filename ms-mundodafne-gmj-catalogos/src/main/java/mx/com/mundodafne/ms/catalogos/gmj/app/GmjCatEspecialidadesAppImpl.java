@@ -35,6 +35,12 @@ public class GmjCatEspecialidadesAppImpl implements GmjCatEspecialiadesApp {
 
 	@Override
 	public Boolean registrarEspecialidad() {
+		CatEspecialidades catEspecialidades = new CatEspecialidades();
+		//de acuerdo al DTO de entrada entonces dar de alta nueva especialidad
+		//catEspRepository
+		catEspecialidades.setNombre("Odontopediatria");
+		
+		catEspRepository.save(catEspecialidades);
 		// TODO Auto-generated method stub
 		return null;
 	}

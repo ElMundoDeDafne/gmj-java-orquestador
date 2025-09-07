@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/cat/v1.0")
 public class GmjCatLocalizacionController {
 	
-	@PostMapping("/cp/get")
+	@GetMapping("/cp/get")
 	public void obtenerDomicilio() {
 		
 	}
