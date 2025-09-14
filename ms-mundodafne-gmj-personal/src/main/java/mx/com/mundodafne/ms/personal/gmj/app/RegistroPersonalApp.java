@@ -1,6 +1,6 @@
 package mx.com.mundodafne.ms.personal.gmj.app;
 
-import mx.com.mundodafne.ms.personal.gmj.controller.RegistroPersonalDTO;
+import mx.com.mundodafne.ms.personal.gmj.dto.RegistroPersonalDTO;
 
 /**
  * Registro de personal a base de datos

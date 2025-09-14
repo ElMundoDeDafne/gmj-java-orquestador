@@ -1,4 +1,4 @@
-package mx.com.mundodafne.ms.personal.gmj.controller;
+package mx.com.mundodafne.ms.personal.gmj.dto;
 
 public class RegistroPersonalDTO {
 	private String nombrePropioUno;
@@ -10,6 +10,7 @@ public class RegistroPersonalDTO {
 	private String cedulaProfesional;
 	private String cedulaProfEspe;
 	private String otraEspecialidad;
+	private String fechaNacimiento;
 	/**
 	 * @return the nombrePropioUno
 	 */
@@ -117,6 +118,12 @@ public class RegistroPersonalDTO {
 	 */
 	public void setOtraEspecialidad(String otraEspecialidad) {
 		this.otraEspecialidad = otraEspecialidad;
+	}
+	public String getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+	public void setFechaNacimiento(String fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 	
 	
