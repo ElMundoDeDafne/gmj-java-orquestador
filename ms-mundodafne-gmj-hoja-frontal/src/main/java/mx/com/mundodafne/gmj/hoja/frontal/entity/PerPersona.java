@@ -43,6 +43,8 @@ public class PerPersona {
 	private LocalDateTime fechaRegistro;
 	@Column(name = "FECHA_BAJA")
 	private LocalDateTime fechaBaja;
+	private String derechoHabiente;
+	private String nss;
 	
 	//1 persona tiene 1 domicilio
 	@OneToOne(cascade = CascadeType.ALL)
@@ -207,6 +209,42 @@ public class PerPersona {
 	 */
 	public void setDomicilio(PerDomicilio domicilio) {
 		this.domicilio = domicilio;
+	}
+	/**
+	 * @return the derechoHabiente
+	 */
+	public String getDerechoHabiente() {
+		return derechoHabiente;
+	}
+	/**
+	 * @param derechoHabiente the derechoHabiente to set
+	 */
+	public void setDerechoHabiente(String derechoHabiente) {
+		this.derechoHabiente = derechoHabiente;
+	}
+	/**
+	 * @return the nss
+	 */
+	public String getNss() {
+		return nss;
+	}
+	/**
+	 * @param nss the nss to set
+	 */
+	public void setNss(String nss) {
+		this.nss = nss;
+	}
+	/**
+	 * @return the perPaciente
+	 */
+	public PerPaciente getPerPaciente() {
+		return perPaciente;
+	}
+	/**
+	 * @param perPaciente the perPaciente to set
+	 */
+	public void setPerPaciente(PerPaciente perPaciente) {
+		this.perPaciente = perPaciente;
 	}
 
 	

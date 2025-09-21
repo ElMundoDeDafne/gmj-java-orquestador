@@ -1,6 +1,5 @@
 package mx.com.mundodafne.gmj.hoja.frontal.app;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
@@ -15,7 +14,6 @@ import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjDomicilioPacienteDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjHojaFrontalDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjInformacionPacienteDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjNESignosVitales;
-import mx.com.mundodafne.gmj.hoja.frontal.dto.GmjRequestFrontalDTO;
 import mx.com.mundodafne.gmj.hoja.frontal.entity.PerDatosContacto;
 import mx.com.mundodafne.gmj.hoja.frontal.entity.PerDomicilio;
 import mx.com.mundodafne.gmj.hoja.frontal.entity.PerPaciente;
@@ -59,7 +57,7 @@ mx.com.mundodafne.gmj.hoja.frontal.dto.GmjDomicilioPacienteDTO@3e8f247f
 mx.com.mundodafne.gmj.hoja.frontal.dto.GmjInformacionPacienteDTO@30e1dd06
 		 * */
 		try {
-			signos = new GmjNESignosVitales();
+			signos = requestFrontalDTO.getNotaEnfermeriaPx().getSignosVitales();
 			persona = new PerPersona();
 			domicilioPersona = new PerDomicilio();
 			datosContactoPersona = new PerDatosContacto();
@@ -87,7 +85,8 @@ mx.com.mundodafne.gmj.hoja.frontal.dto.GmjInformacionPacienteDTO@30e1dd06
 			persona.setApellidoMaterno(infoPaciente.getApellidoMaterno());
 			persona.setApellidoPaterno(infoPaciente.getApellidoPaterno());
 			persona.setCurp(infoPaciente.getCurp());
-			persona.setEdad(infoPaciente.getEdad());		
+			persona.setEdad(infoPaciente.getEdad());
+			
 			offsetDateTime = OffsetDateTime.parse(infoPaciente.getFechaNacimiento());
 			persona.setFechaNacimiento(offsetDateTime.toLocalDate());
 			persona.setOcupacion(infoPaciente.getOcupacion());
@@ -126,11 +125,12 @@ mx.com.mundodafne.gmj.hoja.frontal.dto.GmjInformacionPacienteDTO@30e1dd06
 			siguienteCita = siguienteCita.plusDays(30);
 			paciente = new PerPaciente();
 			paciente.setPersona(persona);
+			paciente.setFechaIngreso(siguienteCita);
 			paciente.setFolio(infoPaciente.getFolio());
 			paciente.setFechaAlta(null);
 			paciente.setMotivoConsulta(infoPaciente.getMotivoConsulta());
 			paciente.setPathSistema("expedientes/paciente/"+persona.getIdPersona()+"/");
-			paciente.setPeso(9.5D);
+			paciente.setPeso(signos.getPeso());
 			signosVitales.setFechaToma(LocalDateTime.now());
 			signosVitales.setOxigenacion(signos.getOxigenacion());
 			signosVitales.setPresionDiast(Integer.valueOf(signos.getPresionDiast()));
