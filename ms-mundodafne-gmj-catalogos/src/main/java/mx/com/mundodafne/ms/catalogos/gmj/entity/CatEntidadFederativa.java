@@ -1,6 +1,17 @@
 package mx.com.mundodafne.ms.catalogos.gmj.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "CAT_ENTIDAD_FEDERATIVA")
 public class CatEntidadFederativa {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idEntidadFederativa;
 	private String codigo;
 	private String abreviatura;

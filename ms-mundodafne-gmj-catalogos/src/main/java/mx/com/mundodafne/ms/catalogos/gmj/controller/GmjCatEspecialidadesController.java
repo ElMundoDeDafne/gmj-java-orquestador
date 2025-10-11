@@ -1,5 +1,6 @@
 package mx.com.mundodafne.ms.catalogos.gmj.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.com.mundodafne.ms.catalogos.gmj.app.GmjCatEspecialidadesAppImpl;
+import mx.com.mundodafne.ms.catalogos.gmj.entity.CatEspecialidades;
+import mx.com.mundodafne.ms.catalogos.gmj.paciente.dto.GmjCatEspecialidadesDTO;
 
 @RestController
 @RequestMapping("/api/cat/v1.0")
@@ -29,8 +32,16 @@ public class GmjCatEspecialidadesController {
 	@GetMapping("/esp/get")
 	public ResponseEntity<Map<String,Object>> obtenerEspecialidades() {
 		Map<String,Object> respuesta = new HashMap();
-		List datosObtenidos = app.obtenerEspecialidades();
-		respuesta.put("datos",datosObtenidos);
+		List<CatEspecialidades> datosObtenidos = app.obtenerEspecialidades();
+		List<GmjCatEspecialidadesDTO> resp = new ArrayList();
+		GmjCatEspecialidadesDTO espDto;
+		for (CatEspecialidades dto : datosObtenidos) {
+			espDto = new GmjCatEspecialidadesDTO();
+			espDto.setCodigoEspecialidad(dto.getCodigo());
+			espDto.setDescripcionEspe(dto.getNombre());
+			resp.add(espDto);
+		}
+		respuesta.put("datos",resp);
 		return ResponseEntity.ok(respuesta);
 	}
 	@GetMapping("/esp/get/desc")

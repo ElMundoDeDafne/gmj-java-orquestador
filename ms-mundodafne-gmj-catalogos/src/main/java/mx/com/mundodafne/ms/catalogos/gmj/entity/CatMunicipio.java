@@ -1,8 +1,19 @@
 package mx.com.mundodafne.ms.catalogos.gmj.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "CAT_MUNICIPIO")
 public class CatMunicipio {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idMunicipio;
-	private CatEntidadFederativa entidadFederativa;
+//	private CatEntidadFederativa entidadFederativa;
 	private String codigo;
 	private String municipio;
 	/**
@@ -17,18 +28,18 @@ public class CatMunicipio {
 	public void setIdMunicipio(Long idMunicipio) {
 		this.idMunicipio = idMunicipio;
 	}
-	/**
-	 * @return the entidadFederativa
-	 */
-	public CatEntidadFederativa getEntidadFederativa() {
-		return entidadFederativa;
-	}
-	/**
-	 * @param entidadFederativa the entidadFederativa to set
-	 */
-	public void setEntidadFederativa(CatEntidadFederativa entidadFederativa) {
-		this.entidadFederativa = entidadFederativa;
-	}
+//	/**
+//	 * @return the entidadFederativa
+//	 */
+//	public CatEntidadFederativa getEntidadFederativa() {
+//		return entidadFederativa;
+//	}
+//	/**
+//	 * @param entidadFederativa the entidadFederativa to set
+//	 */
+//	public void setEntidadFederativa(CatEntidadFederativa entidadFederativa) {
+//		this.entidadFederativa = entidadFederativa;
+//	}
 	/**
 	 * @return the codigo
 	 */

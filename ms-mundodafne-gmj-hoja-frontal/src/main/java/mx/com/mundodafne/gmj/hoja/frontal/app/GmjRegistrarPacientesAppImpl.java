@@ -116,7 +116,6 @@ mx.com.mundodafne.gmj.hoja.frontal.dto.GmjInformacionPacienteDTO@30e1dd06
 				datosContactoPersona.setCodigoIdentificador("CELULAR");
 				datosContactoPersona.setIdentificador(datosContactoPaciente.getNumeroTelefonico());
 				datosContactoPersona.setFechaRegistro(LocalDateTime.now());
-				datosContactoPersona.setFechaRegistro(LocalDateTime.now());
 				contactoRepository.save(datosContactoPersona);
 			}
 			personaRepository.save(persona);

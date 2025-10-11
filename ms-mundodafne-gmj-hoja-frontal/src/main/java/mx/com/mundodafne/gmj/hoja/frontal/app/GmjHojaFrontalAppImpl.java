@@ -47,37 +47,8 @@ public class GmjHojaFrontalAppImpl implements GmjHojaFrontalApp {
 			validadoresApp.validarDatosContactoPx(datosContactoPx);			
 		}
 		if(registrarPacienteApp.registroPaciente(hojaFrontalDTO)) {
-			
+			salida.setExito(true);
 		}
-		salida.setExito(true);
-		salida.setMensajes(msgs);
-		List<PerPersona> personas = personaRepository.findAll();
-		PerPaciente pacienteNuevo = new PerPaciente();
-		PerPersona per = new PerPersona();
-		
-//		per.setNombrePropio1("Juanito");
-//		per.setApellidoMaterno("ApMat");
-//		per.setApellidoPaterno("ApPat");
-//		per.setGenero("M");
-//		per.setOcupacion("ING. INFORMATICO");
-//		pacienteNuevo.setMotivoConsulta("prueba");
-//		pacienteNuevo.setPeso(70D);
-//		pacienteNuevo.setPersona(per);
-//		personaRepository.save(per);
-//		pacienteRepository.save(pacienteNuevo);
-		List pacientes  = pacienteRepository.findAll();
-//		List pacientes  = new ArrayList();
-		if(pacientes == null || pacientes.isEmpty()) {
-			throw new NotFoundException("Sin resultados.");
-		}
-		
-		
-//		GmjPersona nuevaPersona = new GmjPersona();
-		
-//		personaRepository.saveAndFlush(nuevaPersona);
-		//validaciones de datos
-		
-		
 		return salida;
 
 	}
