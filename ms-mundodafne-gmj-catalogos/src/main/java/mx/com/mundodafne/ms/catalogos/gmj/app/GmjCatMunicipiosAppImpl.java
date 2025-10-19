@@ -20,4 +20,12 @@ public class GmjCatMunicipiosAppImpl implements GmjCatMunicipiosApp{
 		return munRepository.findAllMunicipios();
 	}
 
+	@Override
+	public List<CatMunicipio> findMunicipiosByCodigo(String codigo) {
+		// TODO Auto-generated method stub
+		return munRepository.findMunicipioByCode(codigo);
+	}
+	
+	
+
 }

@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,7 +15,9 @@ public class CatMunicipio {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idMunicipio;
-//	private CatEntidadFederativa entidadFederativa;
+	@ManyToOne
+    @JoinColumn(name = "codigoEntidad") // FK en la tabla empleado
+	private CatEntidadFederativa entidadFederativa;
 	private String codigo;
 	private String municipio;
 	/**
@@ -64,4 +68,17 @@ public class CatMunicipio {
 	public void setMunicipio(String municipio) {
 		this.municipio = municipio;
 	}
+	/**
+	 * @return the entidadFederativa
+	 */
+	public CatEntidadFederativa getEntidadFederativa() {
+		return entidadFederativa;
+	}
+	/**
+	 * @param entidadFederativa the entidadFederativa to set
+	 */
+	public void setEntidadFederativa(CatEntidadFederativa entidadFederativa) {
+		this.entidadFederativa = entidadFederativa;
+	}
+	
 }

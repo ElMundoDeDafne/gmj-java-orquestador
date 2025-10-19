@@ -1,0 +1,36 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MsMundodafneGmjPacientesApplication<ms-java-mundodafne-gmj-pacientes>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "mx.com.mundodafne.ms.pacientes.gmj.MsMundodafneGmjPacientesApplication",
+            "projectName": "ms-java-mundodafne-gmj-pacientes",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51240 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=ms-java-mundodafne-gmj-pacientes"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsMundodafneGmjReportesApplication<ms-java-mundodafne-gmj-reportes>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "mx.com.mundodafne.ms.reportes.gmj.MsMundodafneGmjReportesApplication",
+            "projectName": "ms-java-mundodafne-gmj-reportes",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=50965 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=ms-java-mundodafne-gmj-reportes"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsMundodafneGmjHojaFrontalApplication<ms-java-mundodafne-gmj-hoja-frontal>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "mx.com.mundodafne.gmj.hoja.frontal.MsMundodafneGmjHojaFrontalApplication",
+            "projectName": "ms-java-mundodafne-gmj-hoja-frontal",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

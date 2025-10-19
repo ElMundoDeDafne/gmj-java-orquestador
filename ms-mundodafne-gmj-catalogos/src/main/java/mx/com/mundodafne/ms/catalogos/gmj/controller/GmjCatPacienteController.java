@@ -18,7 +18,7 @@ public class GmjCatPacienteController {
 		
 	}
 	
-	@GetMapping("/paciente/get")
+	@GetMapping("/paciente/get/{idPaciente}")
 	public ResponseEntity<Map<String, Object>> obtenerDatosPaciente(@RequestParam Long idPaciente) {
 		Map<String,Object> respuesta = new HashMap();
 		respuesta.put("app", idPaciente);

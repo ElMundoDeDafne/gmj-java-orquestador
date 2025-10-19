@@ -7,4 +7,5 @@ import mx.com.mundodafne.ms.catalogos.gmj.entity.CatMunicipio;
 public interface GmjCatMunicipiosApp {
 	/**Obtener todos los municipios*/
 	List<CatMunicipio> findAllMunicipios();
+	List<CatMunicipio> findMunicipiosByCodigo(String codigo);
 }
