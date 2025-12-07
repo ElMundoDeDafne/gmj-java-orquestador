@@ -26,6 +26,7 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 		PerPacienteEntity paciente;
 		GmjBusquedaPacientesOutDTO row;
 		Iterator itRes = resultados.iterator();
+		Byte edad;
 		while(itRes.hasNext()) {
 			row = new GmjBusquedaPacientesOutDTO();
 			paciente = (PerPacienteEntity) itRes.next();
@@ -40,7 +41,7 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 			row.setFechaUltimaVisita(paciente.getFechaUltimaVisita());
 			row.setEspecialidad("ESP. EJEMPLO");
 			row.setMedicoTratante("DR. FULANITO");
-			Byte edad = Byte.valueOf(persona.getEdad().toString());
+			edad = Byte.valueOf(persona.getEdad().toString());
 			row.setEdad(edad);
 			res.add(row);
 		}
@@ -52,15 +53,34 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 		List<GmjBusquedaPacientesOutDTO> out = null;		
 		String tipoBusqueda = in.getTipoBusqueda();
 		List<PerPacienteEntity> resultados = null;
-		if("nombres".equalsIgnoreCase(tipoBusqueda)) {
-			
-			resultados = pacienteRepo.buscarPacientesPorNombre(in.getNombre());
-			out = obtenerResultados(resultados);
-		}
 		
-		if("folio".equalsIgnoreCase(tipoBusqueda)) {
-			resultados = pacienteRepo.buscarPacientesPorFolio(in.getFolio());
-			out = obtenerResultados(resultados);
+		switch(tipoBusqueda) {
+			case "nombres":
+				resultados = pacienteRepo.buscarPacientesPorNombre(in.getNombre());
+				out = obtenerResultados(resultados);				
+				break;
+			case "folio":
+				resultados = pacienteRepo.buscarPacientesPorFolio(in.getFolio());
+				out = obtenerResultados(resultados);				
+				break;
+			case "curp":
+				resultados = pacienteRepo.buscarPacientesPorCURP(in.getCurp());
+				out = obtenerResultados(resultados);
+				break;
+			case "especialidad":
+//				resultados = pacienteRepo.buscarPacientesPorFolio(in.getFolio());
+//				out = obtenerResultados(resultados);
+				out = new ArrayList();
+				break;
+			case "medicotratante":
+				out = new ArrayList();
+				break;
+			case "localidad":
+				out = obtenerResultados(pacienteRepo.buscarPacientesPorLocalidad(in.getLocalidad()));
+				break;
+			default: //aqui se va a hacer la busqueda de todos los registros
+				out = obtenerResultados(pacienteRepo.findAll());
+				break;
 		}
 		
 		if(out.isEmpty()){

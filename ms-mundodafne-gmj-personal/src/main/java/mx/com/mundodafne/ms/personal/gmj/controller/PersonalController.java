@@ -20,7 +20,7 @@ public class PersonalController {
 		return new ArrayList();
 	}
 	
-	@PostMapping("/registro/personal")
+	@PostMapping("/registro/")
 	public void registrarPersonal(@RequestBody RegistroPersonalDTO registroDTO) {
 		
 	}

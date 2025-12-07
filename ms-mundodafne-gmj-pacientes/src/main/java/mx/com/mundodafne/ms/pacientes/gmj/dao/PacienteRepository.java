@@ -19,12 +19,15 @@ public interface PacienteRepository extends JpaRepository<PerPacienteEntity, Lon
 	//arreglar
 	@Query(value="select ppac from PerPacienteEntity ppac where ppac.perPersona.nombrePropio1 like %:nombre%",nativeQuery = false)
 	List<PerPacienteEntity> buscarPacientesPorNombre(@Param("nombre") String nombre);
+	
 	/**Ojo: Cambiarle por la tabla, vista u objeto correspondiente y tambien columna */
-	@Query(value="SELECT * FROM PER_PACIENTE WHERE NOMBRE_PROPIO LIKE %:localidad%",nativeQuery = true)
+	@Query(value="SELECT pp FROM PerPacienteEntity pp WHERE pp.perPersona.domicilio.localidad LIKE %:localidad%")
 	List<PerPacienteEntity> buscarPacientesPorLocalidad(@Param("localidad") String localidad);
+	
 	/**Ojo: Cambiarle por la tabla, vista u objeto correspondiente y tambien columna */
-	@Query(value="SELECT * FROM PER_PACIENTE WHERE NOMBRE LIKE %:curp%",nativeQuery = true)
+	@Query(value="SELECT pp FROM PerPacienteEntity pp WHERE pp.perPersona.curp LIKE %:curp%")
 	List<PerPacienteEntity> buscarPacientesPorCURP(@Param("curp") String curp);
+	
 	/**Ojo: Cambiarle por la tabla, vista u objeto correspondiente y tambien columna */
 	@Query(value="SELECT * FROM PER_PACIENTE WHERE NOMBRE LIKE %:especialidad%",nativeQuery = true)
 	List<PerPacienteEntity> buscarPacientesPorEspecialidad(@Param("especialidad") String especialidad);
