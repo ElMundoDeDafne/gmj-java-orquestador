@@ -1,6 +1,14 @@
 package mx.com.mundodafne.ms.personal.gmj.dto;
 
-public class RegistroPersonalDTO {
+import java.io.Serializable;
+
+public class RegistroPersonalDTO implements Serializable {
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7282621659521459736L;
 	private String nombrePropioUno;
 	private String nombrePropioDos;
 	private String apellidoPaterno;
@@ -9,8 +17,11 @@ public class RegistroPersonalDTO {
 	private String fechaAlta;
 	private String cedulaProfesional;
 	private String cedulaProfEspe;
-	private String otraEspecialidad;
+	private String especialidadOtro;
 	private String fechaNacimiento;
+	private String tipoPersonal;
+	private String curp;
+	
 	/**
 	 * @return the nombrePropioUno
 	 */
@@ -108,23 +119,60 @@ public class RegistroPersonalDTO {
 		this.cedulaProfEspe = cedulaProfEspe;
 	}
 	/**
-	 * @return the otraEspecialidad
+	 * @return the especialidadOtro
 	 */
-	public String getOtraEspecialidad() {
-		return otraEspecialidad;
+	public String getEspecialidadOtro() {
+		return especialidadOtro;
 	}
 	/**
-	 * @param otraEspecialidad the otraEspecialidad to set
+	 * @param especialidadOtro the especialidadOtro to set
 	 */
-	public void setOtraEspecialidad(String otraEspecialidad) {
-		this.otraEspecialidad = otraEspecialidad;
+	public void setEspecialidadOtro(String especialidadOtro) {
+		this.especialidadOtro = especialidadOtro;
 	}
+	/**
+	 * @return the fechaNacimiento
+	 */
 	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
+	/**
+	 * @param fechaNacimiento the fechaNacimiento to set
+	 */
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
+	/**
+	 * @return the tipoPersonal
+	 */
+	public String getTipoPersonal() {
+		return tipoPersonal;
+	}
+	/**
+	 * @param tipoPersonal the tipoPersonal to set
+	 */
+	public void setTipoPersonal(String tipoPersonal) {
+		this.tipoPersonal = tipoPersonal;
+	}
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	/**
+	 * @return the curp
+	 */
+	public String getCurp() {
+		return curp;
+	}
+	/**
+	 * @param curp the curp to set
+	 */
+	public void setCurp(String curp) {
+		this.curp = curp;
+	}
 	
 	
+		
 }

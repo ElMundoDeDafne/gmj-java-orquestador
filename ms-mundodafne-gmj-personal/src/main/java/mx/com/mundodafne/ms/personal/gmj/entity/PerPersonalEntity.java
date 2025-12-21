@@ -3,7 +3,11 @@ package mx.com.mundodafne.ms.personal.gmj.entity;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
@@ -12,12 +16,16 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "PER_PERSONAL")
 public class PerPersonalEntity {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPersonal;
 	private String cedulaProfesional;
 	private LocalDateTime fechaAlta;
 	private LocalDateTime fechaBaja;
+	@Column(name = "CEDULA_PROF_ESP")
 	private String cedulaProfesionalEspecialidad;
-	@OneToOne(cascade = CascadeType.ALL)
+	
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "ID_PERFIL_PROF", referencedColumnName = "ID_TIPO_PERSONAL")
 	private CatPerfilProfesionalEntity catPerfilProfesionalEntity;
 	
@@ -30,6 +38,7 @@ public class PerPersonalEntity {
     @MapsId // <-- CLAVE: indica que esta entidad comparte la PK con persona
     @JoinColumn(name = "id_personal") // columna FK que también es PK
 	private PerPersonaEntity persona;
+    
 	public String getCedulaProfesional() {
 		return cedulaProfesional;
 	}

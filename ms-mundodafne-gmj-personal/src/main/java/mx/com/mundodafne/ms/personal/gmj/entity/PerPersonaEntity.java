@@ -12,7 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import mx.com.mundodafne.gmj.hoja.frontal.entity.PerPaciente;
 
 @Entity
 @Table(name = "PER_PERSONA")
@@ -45,12 +44,12 @@ public class PerPersonaEntity {
 	private LocalDateTime fechaBaja;
 	
 	//1 persona tiene 1 domicilio
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "ID_DOMICILIO", referencedColumnName = "ID_DOMICILIO")
 	private PerDomicilioEntity domicilio;
 	
-    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL)
-	private PerPersonalEntity perPersonal;
+//    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL)
+//	private PerPersonalEntity perPersonal;
 	
 	/**
 	 * @return the idPersona
@@ -208,4 +207,17 @@ public class PerPersonaEntity {
 	public void setDomicilio(PerDomicilioEntity domicilio) {
 		this.domicilio = domicilio;
 	}
+//	/**
+//	 * @return the perPersonal
+//	 */
+//	public PerPersonalEntity getPerPersonal() {
+//		return perPersonal;
+//	}
+//	/**
+//	 * @param perPersonal the perPersonal to set
+//	 */
+//	public void setPerPersonal(PerPersonalEntity perPersonal) {
+//		this.perPersonal = perPersonal;
+//	}
+	
 }

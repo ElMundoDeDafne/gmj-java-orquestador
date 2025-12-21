@@ -44,7 +44,7 @@ public class GmjCatEspecialidadesController {
 		respuesta.put("datos",resp);
 		return ResponseEntity.ok(respuesta);
 	}
-	@GetMapping("/esp/get/desc/")
+	@GetMapping("/esp/get/{codigo}")
 	public ResponseEntity<Map<String, Object>> obtenerEspecialidadPorCodigo(@PathVariable  String codigo) {
 		Map<String,Object> respuesta = new HashMap();
 		String resp = app.obtenerEspecialidadPorCodigo(codigo);

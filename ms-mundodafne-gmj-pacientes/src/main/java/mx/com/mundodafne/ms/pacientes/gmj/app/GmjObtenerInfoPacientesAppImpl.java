@@ -52,7 +52,7 @@ public class GmjObtenerInfoPacientesAppImpl implements GmjObtenerInfoPacientesAp
 	public List<GmjBusquedaPacientesOutDTO> busquedaPacientesFiltro(GmjBusquedaPacientesInDTO in) throws BusinessException {
 		List<GmjBusquedaPacientesOutDTO> out = null;		
 		String tipoBusqueda = in.getTipoBusqueda();
-		List<PerPacienteEntity> resultados = null;
+		List<PerPacienteEntity> resultados = null;		
 		
 		switch(tipoBusqueda) {
 			case "nombres":
