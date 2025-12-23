@@ -31,7 +31,7 @@ public class PerPersonaEntity {
 	@Column(name = "EDAD")
 	private Integer edad;
 	@Column(name = "GENERO")
-	private String genero;
+	private Character genero;
 	@Column(name = "FECHA_NACIMIENTO")
 	private LocalDate fechaNacimiento;
 	@Column(name = "CURP")
@@ -42,182 +42,229 @@ public class PerPersonaEntity {
 	private LocalDateTime fechaRegistro;
 	@Column(name = "FECHA_BAJA")
 	private LocalDateTime fechaBaja;
+	@Column(name = "SEXO")
+	private Character sexo;
+	@Column(name = "EDO_CIVIL")
+	private String edoCivil;
 	
 	//1 persona tiene 1 domicilio
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "ID_DOMICILIO", referencedColumnName = "ID_DOMICILIO")
 	private PerDomicilioEntity domicilio;
-	
-//    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL)
-//	private PerPersonalEntity perPersonal;
-	
+
 	/**
 	 * @return the idPersona
 	 */
 	public Long getIdPersona() {
 		return idPersona;
 	}
+
 	/**
 	 * @param idPersona the idPersona to set
 	 */
 	public void setIdPersona(Long idPersona) {
 		this.idPersona = idPersona;
 	}
+
 	/**
 	 * @return the nombrePropio1
 	 */
 	public String getNombrePropio1() {
 		return nombrePropio1;
 	}
+
 	/**
 	 * @param nombrePropio1 the nombrePropio1 to set
 	 */
 	public void setNombrePropio1(String nombrePropio1) {
 		this.nombrePropio1 = nombrePropio1;
 	}
+
 	/**
 	 * @return the nombrePropio2
 	 */
 	public String getNombrePropio2() {
 		return nombrePropio2;
 	}
+
 	/**
 	 * @param nombrePropio2 the nombrePropio2 to set
 	 */
 	public void setNombrePropio2(String nombrePropio2) {
 		this.nombrePropio2 = nombrePropio2;
 	}
+
 	/**
 	 * @return the apellidoPaterno
 	 */
 	public String getApellidoPaterno() {
 		return apellidoPaterno;
 	}
+
 	/**
 	 * @param apellidoPaterno the apellidoPaterno to set
 	 */
 	public void setApellidoPaterno(String apellidoPaterno) {
 		this.apellidoPaterno = apellidoPaterno;
 	}
+
 	/**
 	 * @return the apellidoMaterno
 	 */
 	public String getApellidoMaterno() {
 		return apellidoMaterno;
 	}
+
 	/**
 	 * @param apellidoMaterno the apellidoMaterno to set
 	 */
 	public void setApellidoMaterno(String apellidoMaterno) {
 		this.apellidoMaterno = apellidoMaterno;
 	}
+
 	/**
 	 * @return the edad
 	 */
 	public Integer getEdad() {
 		return edad;
 	}
+
 	/**
 	 * @param edad the edad to set
 	 */
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
+
 	/**
 	 * @return the genero
 	 */
-	public String getGenero() {
+	public Character getGenero() {
 		return genero;
 	}
+
 	/**
 	 * @param genero the genero to set
 	 */
-	public void setGenero(String genero) {
+	public void setGenero(Character genero) {
 		this.genero = genero;
 	}
+
 	/**
 	 * @return the fechaNacimiento
 	 */
 	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
+
 	/**
 	 * @param fechaNacimiento the fechaNacimiento to set
 	 */
 	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
+
 	/**
 	 * @return the curp
 	 */
 	public String getCurp() {
 		return curp;
 	}
+
 	/**
 	 * @param curp the curp to set
 	 */
 	public void setCurp(String curp) {
 		this.curp = curp;
 	}
+
 	/**
 	 * @return the ocupacion
 	 */
 	public String getOcupacion() {
 		return ocupacion;
 	}
+
 	/**
 	 * @param ocupacion the ocupacion to set
 	 */
 	public void setOcupacion(String ocupacion) {
 		this.ocupacion = ocupacion;
 	}
+
 	/**
 	 * @return the fechaRegistro
 	 */
 	public LocalDateTime getFechaRegistro() {
 		return fechaRegistro;
 	}
+
 	/**
 	 * @param fechaRegistro the fechaRegistro to set
 	 */
 	public void setFechaRegistro(LocalDateTime fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
 	}
+
 	/**
 	 * @return the fechaBaja
 	 */
 	public LocalDateTime getFechaBaja() {
 		return fechaBaja;
 	}
+
 	/**
 	 * @param fechaBaja the fechaBaja to set
 	 */
 	public void setFechaBaja(LocalDateTime fechaBaja) {
 		this.fechaBaja = fechaBaja;
 	}
+
+	/**
+	 * @return the sexo
+	 */
+	public Character getSexo() {
+		return sexo;
+	}
+
+	/**
+	 * @param sexo the sexo to set
+	 */
+	public void setSexo(Character sexo) {
+		this.sexo = sexo;
+	}
+
+	/**
+	 * @return the edoCivil
+	 */
+	public String getEdoCivil() {
+		return edoCivil;
+	}
+
+	/**
+	 * @param edoCivil the edoCivil to set
+	 */
+	public void setEdoCivil(String edoCivil) {
+		this.edoCivil = edoCivil;
+	}
+
 	/**
 	 * @return the domicilio
 	 */
 	public PerDomicilioEntity getDomicilio() {
 		return domicilio;
 	}
+
 	/**
 	 * @param domicilio the domicilio to set
 	 */
 	public void setDomicilio(PerDomicilioEntity domicilio) {
 		this.domicilio = domicilio;
 	}
-//	/**
-//	 * @return the perPersonal
-//	 */
-//	public PerPersonalEntity getPerPersonal() {
-//		return perPersonal;
-//	}
-//	/**
-//	 * @param perPersonal the perPersonal to set
-//	 */
-//	public void setPerPersonal(PerPersonalEntity perPersonal) {
-//		this.perPersonal = perPersonal;
-//	}
+	
+//    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL)
+//	private PerPersonalEntity perPersonal;
+	
+	
 	
 }

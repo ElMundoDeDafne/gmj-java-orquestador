@@ -21,6 +21,8 @@ public class RegistroPersonalDTO implements Serializable {
 	private String fechaNacimiento;
 	private String tipoPersonal;
 	private String curp;
+	private String sexo;
+	private String estadoCivil;
 	
 	/**
 	 * @return the nombrePropioUno
@@ -171,6 +173,30 @@ public class RegistroPersonalDTO implements Serializable {
 	 */
 	public void setCurp(String curp) {
 		this.curp = curp;
+	}
+	/**
+	 * @return the sexo
+	 */
+	public String getSexo() {
+		return sexo;
+	}
+	/**
+	 * @param sexo the sexo to set
+	 */
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	/**
+	 * @return the estadoCivil
+	 */
+	public String getEstadoCivil() {
+		return estadoCivil;
+	}
+	/**
+	 * @param estadoCivil the estadoCivil to set
+	 */
+	public void setEstadoCivil(String estadoCivil) {
+		this.estadoCivil = estadoCivil;
 	}
 	
 	

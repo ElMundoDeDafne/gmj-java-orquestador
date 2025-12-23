@@ -52,6 +52,9 @@ public class RegistroPersonalAppImpl implements RegistroPersonalApp {
 		entityPersona.setDomicilio(null);
 		entityPersona.setNombrePropio1(registroDTO.getNombrePropioUno());
 		entityPersona.setNombrePropio2(registroDTO.getNombrePropioDos());
+		entityPersona.setSexo(registroDTO.getSexo().charAt(0));
+		entityPersona.setGenero('H' == registroDTO.getSexo().charAt(0)?'M':'F');
+		entityPersona.setEdoCivil(registroDTO.getEstadoCivil());
 		personaRepo.save(entityPersona);
 		entityPersonal.setPersona(entityPersona);
 		entityPersonal.setCedulaProfesional(registroDTO.getCedulaProfesional());
